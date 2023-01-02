@@ -559,10 +559,10 @@
     <Compile Include="Catalogos\frmtipo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmverpagos.Designer.vb">
+    <Compile Include="Consultas\frmverpagos.Designer.vb">
       <DependentUpon>frmverpagos.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmverpagos.vb">
+    <Compile Include="Consultas\frmverpagos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmvisita.Designer.vb">
@@ -635,10 +635,22 @@
     <Compile Include="Reportes\frmreporte5.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmreporte6.Designer.vb">
+      <DependentUpon>frmreporte6.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmreporte6.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmreportecaja.Designer.vb">
       <DependentUpon>frmreportecaja.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frmreportecaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmreporteretiro.Designer.vb">
+      <DependentUpon>frmreporteretiro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmreporteretiro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\RptCaja.vb">
@@ -646,6 +658,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RptCaja.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptRetiro.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptRetiro.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RptTicket6.vb">
+      <DependentUpon>RptTicket6.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reportes\RptTicket5.vb">
       <DependentUpon>RptTicket5.rpt</DependentUpon>
@@ -895,7 +919,7 @@
     <EmbeddedResource Include="Catalogos\frmtipo.resx">
       <DependentUpon>frmtipo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmverpagos.resx">
+    <EmbeddedResource Include="Consultas\frmverpagos.resx">
       <DependentUpon>frmverpagos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmvisita.resx">
@@ -932,12 +956,26 @@
     <EmbeddedResource Include="Reportes\frmreporte5.resx">
       <DependentUpon>frmreporte5.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmreporte6.resx">
+      <DependentUpon>frmreporte6.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreportecaja.resx">
       <DependentUpon>frmreportecaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmreporteretiro.resx">
+      <DependentUpon>frmreporteretiro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptCaja.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptRetiro.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptRetiro.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RptTicket6.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTicket6.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptTicket5.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

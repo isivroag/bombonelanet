@@ -2140,11 +2140,12 @@ Public Class c_mysqlconn
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.InsertCommand = New MySqlCommand("insert into retiro (fecha,monto) values (@fecha,@monto)", _conexion)
+            adaptador.InsertCommand = New MySqlCommand("insert into retiro (fecha,monto,fechaop,montoant,montodesp) values (@fecha,@monto,@fechaop,@montoant,@montodesp)", _conexion)
             adaptador.InsertCommand.Parameters.Add("@fecha", MySqlDbType.Date).Value = Format(datos.Fecha, "yyyy-MM-dd")
-
+            adaptador.InsertCommand.Parameters.Add("@fechaop", MySqlDbType.DateTime).Value = Format(datos.Fechaop, "yyyy-MM-dd HH:mm:ss")
             adaptador.InsertCommand.Parameters.Add("@monto", MySqlDbType.Double).Value = datos.Monto
-
+            adaptador.InsertCommand.Parameters.Add("@montoant", MySqlDbType.Double).Value = datos.Montoant
+            adaptador.InsertCommand.Parameters.Add("@montodesp", MySqlDbType.Double).Value = datos.Montodesp
             _conexion.Open()
             adaptador.InsertCommand.Connection = _conexion
             adaptador.InsertCommand.ExecuteNonQuery()

@@ -56,16 +56,16 @@ Partial Class frmprincipal
         Me.mncingresos = New System.Windows.Forms.ToolStripMenuItem()
         Me.mncinventarios = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnhistorial = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnabrircaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mngastocaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnreportecaja = New System.Windows.Forms.ToolStripMenuItem()
         Me.mntools = New System.Windows.Forms.ToolStripMenuItem()
         Me.SUBMNPRIINVENT = New System.Windows.Forms.ToolStripMenuItem()
         Me.mngastos = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnproveedor = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnpartida = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnegresos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnabrircaja = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mngastocaja = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnreportecaja = New System.Windows.Forms.ToolStripMenuItem()
         Me.tconsulta = New System.Windows.Forms.Timer(Me.components)
         Me.pimpresion = New System.Windows.Forms.Panel()
         Me.grdatos = New System.Windows.Forms.DataGridView()
@@ -300,6 +300,37 @@ Partial Class frmprincipal
         Me.mnhistorial.Text = "HISTORIAL"
         Me.mnhistorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnabrircaja, Me.mngastocaja, Me.mnreportecaja})
+        Me.ToolStripMenuItem1.Image = Global.Bombonela.My.Resources.Resources.cashbox
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(48, 35)
+        Me.ToolStripMenuItem1.Text = "CAJA"
+        Me.ToolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'mnabrircaja
+        '
+        Me.mnabrircaja.Image = Global.Bombonela.My.Resources.Resources.OPEN
+        Me.mnabrircaja.Name = "mnabrircaja"
+        Me.mnabrircaja.Size = New System.Drawing.Size(179, 22)
+        Me.mnabrircaja.Text = "APERTURA DE CAJA"
+        '
+        'mngastocaja
+        '
+        Me.mngastocaja.BackColor = System.Drawing.Color.White
+        Me.mngastocaja.Image = Global.Bombonela.My.Resources.Resources.PAGOS
+        Me.mngastocaja.Name = "mngastocaja"
+        Me.mngastocaja.Size = New System.Drawing.Size(179, 22)
+        Me.mngastocaja.Text = "GASTOS CAJA"
+        '
+        'mnreportecaja
+        '
+        Me.mnreportecaja.Image = Global.Bombonela.My.Resources.Resources.RPTCAJA
+        Me.mnreportecaja.Name = "mnreportecaja"
+        Me.mnreportecaja.Size = New System.Drawing.Size(179, 22)
+        Me.mnreportecaja.Text = "REPORTE DE CAJA"
+        '
         'mntools
         '
         Me.mntools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SUBMNPRIINVENT})
@@ -344,37 +375,6 @@ Partial Class frmprincipal
         Me.submnegresos.Name = "submnegresos"
         Me.submnegresos.Size = New System.Drawing.Size(152, 22)
         Me.submnegresos.Text = "EGRESOS"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnabrircaja, Me.mngastocaja, Me.mnreportecaja})
-        Me.ToolStripMenuItem1.Image = Global.Bombonela.My.Resources.Resources.cashbox
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(48, 35)
-        Me.ToolStripMenuItem1.Text = "CAJA"
-        Me.ToolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'mnabrircaja
-        '
-        Me.mnabrircaja.Image = Global.Bombonela.My.Resources.Resources.OPEN
-        Me.mnabrircaja.Name = "mnabrircaja"
-        Me.mnabrircaja.Size = New System.Drawing.Size(179, 22)
-        Me.mnabrircaja.Text = "APERTURA DE CAJA"
-        '
-        'mngastocaja
-        '
-        Me.mngastocaja.BackColor = System.Drawing.Color.White
-        Me.mngastocaja.Image = Global.Bombonela.My.Resources.Resources.PAGOS
-        Me.mngastocaja.Name = "mngastocaja"
-        Me.mngastocaja.Size = New System.Drawing.Size(179, 22)
-        Me.mngastocaja.Text = "GASTOS CAJA"
-        '
-        'mnreportecaja
-        '
-        Me.mnreportecaja.Image = Global.Bombonela.My.Resources.Resources.RPTCAJA
-        Me.mnreportecaja.Name = "mnreportecaja"
-        Me.mnreportecaja.Size = New System.Drawing.Size(179, 22)
-        Me.mnreportecaja.Text = "REPORTE DE CAJA"
         '
         'tconsulta
         '

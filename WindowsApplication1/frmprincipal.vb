@@ -282,6 +282,11 @@ Public Class frmprincipal
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
                 x.CAJA()
                 x.ShowDialog()
+            Case 6
+                Dim x As New frmreporte6
+                x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
+                x.CAJA()
+                x.ShowDialog()
             Case Else
                 Dim x As New frmreporte
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)

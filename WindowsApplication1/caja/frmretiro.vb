@@ -12,6 +12,7 @@ Public Class frmretiro
     Dim flujobruto As Double
     Dim gasto As Double
     Dim opc As Int32
+    Dim idretiro As Int64
 
     Public Sub consulta()
 
@@ -90,12 +91,18 @@ Public Class frmretiro
 
 
         registro = New c_retiro
+        registro.Montoant = CDbl(tdisponible.Text())
         registro.Monto = CDbl(tmonto.Text())
+        registro.Montodesp = CDbl(tdisponible.Text()) - CDbl(tmonto.Text())
         registro.Fecha = Format(dtFecha.Value, "yyyy-MM-dd")
+        registro.Fechaop = Format(Now, "yyyy-MM-dd HH:mm:ss tt")
 
 
         If conn.insertarnuevo(registro) Then
             MsgBox("RETIRO REGISTRADO", vbInformation + vbOKOnly, "RETIRO DE CAJA")
+            conn = New c_mysqlconn
+            idretiro = conn.Obtener_dato("select id_retiro as dato from retiro order by id_retiro desc limit 1")
+            imprimir()
             frmrptcaja.consulta()
             Dispose()
         Else
@@ -103,5 +110,14 @@ Public Class frmretiro
         End If
 
 
+    End Sub
+
+    Private Sub imprimir()
+
+        Dim x As New frmreporteretiro
+        x.folio = idretiro
+        x.retiro()
+
+        x.ShowDialog()
     End Sub
 End Class

@@ -84,6 +84,11 @@ Public Class frmverpagos
                 x.folio = foliopago
                 x.CAJA()
                 x.ShowDialog()
+            Case 6
+                Dim x As New frmreporte6
+                x.folio = foliopago
+                x.CAJA()
+                x.ShowDialog()
             Case Else
                 Dim x As New frmreporte
                 x.folio = foliopago

@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("tecniem.com")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("localhost")>  _
         Public Property server() As String
             Get
                 Return CType(Me("server"),String)
@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("tecniemc_bombonela_ver")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("bombonela")>  _
         Public Property db() As String
             Get
                 Return CType(Me("db"),String)
@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("tecniemc_ivan")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("root")>  _
         Public Property user() As String
             Get
                 Return CType(Me("user"),String)
@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("66obispo.colima")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property pwd() As String
             Get
                 Return CType(Me("pwd"),String)

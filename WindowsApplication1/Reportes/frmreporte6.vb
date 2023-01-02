@@ -1,12 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
-Public Class frmreporte5
+
+Public Class frmreporte6
     Public folio As String
 
     Public Sub CAJA()
         Dim sql As String
         Dim conn As New c_mysqlconn
         Dim tabla As New DataTable
-        Dim REPORTE As New RptTicket5
+        Dim REPORTE As New RptTicket6
 
 
 
@@ -47,7 +48,6 @@ Public Class frmreporte5
         conn.actualizarimpresion(folio)
 
     End Sub
-
     Private Sub ReportViewer_Load(sender As Object, e As EventArgs) Handles ReportViewer.Load
 
     End Sub
