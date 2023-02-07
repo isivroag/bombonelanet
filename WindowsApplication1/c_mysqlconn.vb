@@ -2162,4 +2162,98 @@ Public Class c_mysqlconn
 
 #End Region
 
+#Region "CANCELAR"
+    Public Function cancelar(ByVal folio As String, ByVal tipo As Integer, ByVal usuario As String, ByVal motivo As String) As Boolean
+        Dim estado As Boolean = True
+        Dim fecha As DateTime
+        fecha = Format(Now.Date, "yyyy-MM-dd HH:mm:ss")
+        Try
+            conexion()
+            Select Case tipo
+                Case 1
+                    adaptador.UpdateCommand = New MySqlCommand("update gasto Set estado_gasto=0,usuario_can=@usuario,fecha_can=@fecha,motivo_can=@motivo where id_gasto=@folio", _conexion)
+
+                Case 2
+                    adaptador.UpdateCommand = New MySqlCommand("update retiro Set estado_retiro=0,usuario_can=@usuario,fecha_can=@fecha,motivo_can=@motivo where id_retiro=@folio", _conexion)
+            End Select
+            adaptador.UpdateCommand.Parameters.Add("@folio", MySqlDbType.String).Value = folio
+            adaptador.UpdateCommand.Parameters.Add("@usuario", MySqlDbType.String).Value = usuario
+            adaptador.UpdateCommand.Parameters.Add("@motivo", MySqlDbType.String).Value = motivo
+            adaptador.UpdateCommand.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = fecha
+
+            _conexion.Open()
+            adaptador.UpdateCommand.Connection = _conexion
+            adaptador.UpdateCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+#End Region
+
+#Region "BODEGA"
+    Public Function insertarnuevo(ByVal datos As c_transfer) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.InsertCommand = New MySqlCommand("insert into transfer (origen,destino,fecha_trans,obs_trans,importe) " &
+                                                       "values(@origen,@destino,@fecha_trans,@obs_trans,@importe)", _conexion)
+            adaptador.InsertCommand.Parameters.Add("@origen", MySqlDbType.VarChar).Value = datos.Origen
+            adaptador.InsertCommand.Parameters.Add("@destino", MySqlDbType.VarChar).Value = datos.Destino
+            adaptador.InsertCommand.Parameters.Add("@fecha_trans", MySqlDbType.Date).Value = datos.Fecha_trans
+            adaptador.InsertCommand.Parameters.Add("@obs_trans", MySqlDbType.VarChar).Value = datos.Obs_trans
+            adaptador.InsertCommand.Parameters.Add("@importe", MySqlDbType.Double).Value = datos.Importe
+
+            _conexion.Open()
+            adaptador.InsertCommand.Connection = _conexion
+            adaptador.InsertCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+
+    Public Function insertardetbodega(ByVal datos As c_transfer_detalle) As Boolean
+        Dim estado As Boolean = True
+        Try
+            conexion()
+            adaptador.InsertCommand = New MySqlCommand("insert into transfer_detalle(folio_transfer,id_prod,clave_prod,concepto,cantidad,unidad,costo,importe) " &
+                                                       "values (@folio_transfer,@id_prod,@clave_prod,@concepto,@cantidad,@unidad,@costo,@importe)", _conexion)
+            adaptador.InsertCommand.Parameters.Add("@folio_transfer", MySqlDbType.Int64).Value = datos.Folio_transfer
+            adaptador.InsertCommand.Parameters.Add("@id_prod", MySqlDbType.Int64).Value = datos.Id_prod
+            adaptador.InsertCommand.Parameters.Add("@clave_prod", MySqlDbType.String).Value = datos.Clave_prod
+            adaptador.InsertCommand.Parameters.Add("@concepto", MySqlDbType.String).Value = datos.Concepto
+            adaptador.InsertCommand.Parameters.Add("@unidad", MySqlDbType.String).Value = datos.Unidad
+            adaptador.InsertCommand.Parameters.Add("@cantidad", MySqlDbType.Double).Value = datos.Cantidad
+            adaptador.InsertCommand.Parameters.Add("@costo", MySqlDbType.Double).Value = datos.Costo
+            adaptador.InsertCommand.Parameters.Add("@importe", MySqlDbType.Double).Value = datos.Importe
+
+
+            _conexion.Open()
+            adaptador.InsertCommand.Connection = _conexion
+            adaptador.InsertCommand.ExecuteNonQuery()
+
+
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            estado = False
+        Finally
+            desconectar()
+        End Try
+        Return estado
+    End Function
+
+#End Region
+
+
 End Class

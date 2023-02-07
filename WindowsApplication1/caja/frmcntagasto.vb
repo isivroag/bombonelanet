@@ -42,6 +42,7 @@ Public Class frmcntagasto
 
     End Sub
     Private Sub frmcntagasto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        inicial(sender, e, "CONSULTA DE GASTOS DE CAJA")
         ExtendedMethods.DoubleBuffered(grdetalle, True)
         fechaini = (New Date(DtInicio.Value.Year, DtInicio.Value.Month, DtInicio.Value.Day, 0, 0, 0))
         fechafin = (New Date(DtFin.Value.Year, DtFin.Value.Month, DtFin.Value.Day, 23, 59, 59))
@@ -92,5 +93,15 @@ Public Class frmcntagasto
 
     Private Sub mncIMPRIMIR_Click(sender As Object, e As EventArgs) Handles mncIMPRIMIR.Click
         ExportarDatosExcel2(grdetalle, "REPORTE DE GASTOS DE CAJA DEL " & DtInicio.Text & " AL " & DtFin.Text)
+    End Sub
+
+    Private Sub mncELIMINAR_Click(sender As Object, e As EventArgs) Handles mncELIMINAR.Click
+        If MsgBox("DESEA ELIMINAR ESTE REGISTRO", vbYesNo + vbQuestion, "ELIMINAR") = vbYes Then
+            Dim clave As String
+            clave = Convert.ToDouble(grdetalle.CurrentRow().Cells(0).Value)
+            frmauxcancelar.Show()
+            frmauxcancelar.folio = clave
+            frmauxcancelar.tipo = 1
+        End If
     End Sub
 End Class

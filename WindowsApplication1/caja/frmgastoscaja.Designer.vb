@@ -22,6 +22,7 @@ Partial Class frmgastoscaja
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmgastoscaja))
         Me.cfact = New System.Windows.Forms.CheckBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.tfact = New System.Windows.Forms.TextBox()
@@ -218,6 +219,7 @@ Partial Class frmgastoscaja
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Label6)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmgastoscaja"
         Me.Text = "frmgastoscaja"
         Me.Panel1.ResumeLayout(False)

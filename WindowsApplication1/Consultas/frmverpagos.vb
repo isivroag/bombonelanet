@@ -62,7 +62,7 @@ Public Class frmverpagos
             Case 1
                 Dim x As New frmreporte
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 2
                 Dim x As New frmreporte2

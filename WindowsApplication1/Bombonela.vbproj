@@ -135,6 +135,36 @@
     <Compile Include="Auxiliar\frmaux.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Auxiliar\frmauxcancelar.Designer.vb">
+      <DependentUpon>frmauxcancelar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Auxiliar\frmauxcancelar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodega\frmauxbodega.Designer.vb">
+      <DependentUpon>frmauxbodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\frmauxbodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodega\frmcntamovbodega.Designer.vb">
+      <DependentUpon>frmcntamovbodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\frmcntamovbodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodega\frmcntaprodbodega.Designer.vb">
+      <DependentUpon>frmcntaprodbodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\frmcntaprodbodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bodega\frmmovalmacenp.Designer.vb">
+      <DependentUpon>frmmovalmacenp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bodega\frmmovalmacenp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="caja\frmabrircaja.Designer.vb">
       <DependentUpon>frmabrircaja.vb</DependentUpon>
     </Compile>
@@ -216,7 +246,15 @@
     <Compile Include="Clases\c_proveedor.vb" />
     <Compile Include="Clases\c_retiro.vb" />
     <Compile Include="Clases\c_subpartida.vb" />
+    <Compile Include="Clases\c_transfer.vb" />
+    <Compile Include="Clases\c_transfer_detalle.vb" />
     <Compile Include="Clases\c_wcliente.vb" />
+    <Compile Include="caja\cntaretiros.Designer.vb">
+      <DependentUpon>cntaretiros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="caja\cntaretiros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Consultas\frmcntacorte.Designer.vb">
       <DependentUpon>frmcntacorte.vb</DependentUpon>
     </Compile>
@@ -271,6 +309,12 @@
     <Compile Include="Consultas\frmcntapartida.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consultas\frmcntatickets.Designer.vb">
+      <DependentUpon>frmcntatickets.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmcntatickets.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Consultas\frmcntavtadetpago.Designer.vb">
       <DependentUpon>frmcntavtadetpago.vb</DependentUpon>
     </Compile>
@@ -281,6 +325,12 @@
       <DependentUpon>frmcntawcliente.vb</DependentUpon>
     </Compile>
     <Compile Include="Consultas\frmcntawcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmcumple.Designer.vb">
+      <DependentUpon>frmcumple.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmcumple.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="c_mysqlconn.vb" />
@@ -724,6 +774,24 @@
     <EmbeddedResource Include="Auxiliar\frmaux.resx">
       <DependentUpon>frmaux.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auxiliar\frmauxcancelar.resx">
+      <DependentUpon>frmauxcancelar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\frmauxbodega.resx">
+      <DependentUpon>frmauxbodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\frmcntamovbodega.resx">
+      <DependentUpon>frmcntamovbodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\frmcntaprodbodega.resx">
+      <DependentUpon>frmcntaprodbodega.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bodega\frmmovalmacenp.resx">
+      <DependentUpon>frmmovalmacenp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="caja\cntaretiros.resx">
+      <DependentUpon>cntaretiros.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="caja\frmabrircaja.resx">
       <DependentUpon>frmabrircaja.vb</DependentUpon>
     </EmbeddedResource>
@@ -784,11 +852,17 @@
     <EmbeddedResource Include="Consultas\frmcntapartida.resx">
       <DependentUpon>frmcntapartida.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmcntatickets.resx">
+      <DependentUpon>frmcntatickets.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcntavtadetpago.resx">
       <DependentUpon>frmcntavtadetpago.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcntawcliente.resx">
       <DependentUpon>frmcntawcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmcumple.resx">
+      <DependentUpon>frmcumple.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmcntavtadet.resx">
       <DependentUpon>frmcntavtadet.vb</DependentUpon>
@@ -1091,6 +1165,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bombonelafondo.ico" />
+    <None Include="Resources\VER.png" />
+    <None Include="Resources\WAREHOUSE.png" />
+    <None Include="Resources\CUMPLE.png" />
+    <None Include="Resources\confeti2.png" />
+    <None Include="Resources\confeti1.png" />
+    <None Include="Resources\bill.png" />
+    <None Include="Resources\bank.png" />
+    <None Include="Resources\exc16.png" />
     <None Include="Resources\RETIRO.png" />
     <None Include="Resources\RPTCAJA.png" />
     <None Include="Resources\OPEN.png" />

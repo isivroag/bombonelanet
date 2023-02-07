@@ -329,4 +329,27 @@ Public Class frmprincipal
         frmrptcaja.BringToFront()
 
     End Sub
+
+    Private Sub mnretirocaja_Click(sender As Object, e As EventArgs) Handles mnretirocaja.Click
+        frmcntaretiros.Show()
+        frmcntaretiros.BringToFront()
+    End Sub
+
+    Private Sub mnctickets_Click(sender As Object, e As EventArgs) Handles mnctickets.Click
+        frmcntatickets.Show()
+        frmcntatickets.BringToFront()
+
+    End Sub
+
+    Private Sub mnccumple_Click(sender As Object, e As EventArgs) Handles mnccumple.Click
+        frmcumple.Show()
+        frmcumple.BringToFront()
+
+    End Sub
+
+    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+        frmcntamovbodega.Show()
+        frmcntamovbodega.BringToFront()
+
+    End Sub
 End Class

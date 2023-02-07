@@ -18,6 +18,23 @@ Public Class frmrptcaja
     Dim gasto As Double
     Dim retiro As Double
     Dim flujoneto As Double
+
+
+
+    Dim montoinig As Double
+    Dim efectivog As Double
+    Dim tcreditog As Double
+    Dim tdebitog As Double
+    Dim amexg As Double
+    Dim depositog As Double
+    Dim otrog As Double
+    Dim transferg As Double
+    Dim ingresog As Double
+    Dim flujobrutog As Double
+    Dim gastog As Double
+    Dim retirog As Double
+    Dim flujonetog As Double
+
     Dim idcaja As Int64
     Dim opc As Int32
 
@@ -34,10 +51,42 @@ Public Class frmrptcaja
             opc = 1
             idcaja = 0
 
+            montoinig = -1
+            efectivog = -1
+            tcreditog = -1
+            tdebitog = -1
+            amexg = -1
+            depositog = -1
+            otrog = -1
+            transferg = -1
+            ingresog = -1
+            flujobrutog = -1
+            gastog = -1
+            retirog = -1
+            flujonetog = -1
+
         Else
             montoini = tabla.Rows(0).Item("inicial")
             idcaja = tabla.Rows(0).Item("id_caja")
             opc = 2
+
+            montoinig = tabla.Rows(0).Item("inicial")
+            efectivog = tabla.Rows(0).Item("efectivo")
+            tcreditog = tabla.Rows(0).Item("tcredito")
+            tdebitog = tabla.Rows(0).Item("tdebito")
+            amexg = tabla.Rows(0).Item("amex")
+            depositog = tabla.Rows(0).Item("depositos")
+            otrog = tabla.Rows(0).Item("otros")
+            transferg = tabla.Rows(0).Item("transferencias")
+
+            ingresog = efectivog + otrog + transferg + tcreditog + tdebitog + amexg + depositog
+            flujobrutog = efectivog + montoini
+
+            gastog = tabla.Rows(0).Item("gastos")
+            retirog = tabla.Rows(0).Item("retiros")
+            flujonetog = tabla.Rows(0).Item("final")
+
+
         End If
 
 
@@ -121,7 +170,7 @@ Public Class frmrptcaja
             otro = tabla.Rows(0).Item("monto")
         End If
 
-        sql = "select sum(monto) as monto from gasto where fecha='" & Format(fecha, "yyyy-MM-dd") & "' group by fecha "
+        sql = "select sum(monto) as monto from gasto where fecha='" & Format(fecha, "yyyy-MM-dd") & "' and estado_gasto=1 group by fecha "
         tabla = New DataTable
         conn = New c_mysqlconn
         tabla = conn.consulta(sql)
@@ -133,7 +182,7 @@ Public Class frmrptcaja
         End If
 
 
-        sql = "select sum(monto) as monto from retiro where fecha='" & Format(fecha, "yyyy-MM-dd") & "' group by fecha "
+        sql = "select sum(monto) as monto from retiro where fecha='" & Format(fecha, "yyyy-MM-dd") & "' and estado_retiro=1 group by fecha "
         tabla = New DataTable
         conn = New c_mysqlconn
         tabla = conn.consulta(sql)
@@ -163,7 +212,56 @@ Public Class frmrptcaja
         tretiros.Text = retiro
         tflujoneto.Text = flujoneto
 
+
+
+        ttdebitog.Text = tdebitog
+        ttcreditog.Text = tcreditog
+        tdepositog.Text = depositog
+        ttransferg.Text = transferg
+        tamexg.Text = amexg
+
+        tinicialg.Text = montoinig
+        tefectivog.Text = efectivog
+        tingresosg.Text = ingresog
+        tflujobrutog.Text = flujobrutog
+        totrosg.Text = otrog
+        tgastosg.Text = gastog
+        tretirosg.Text = retirog
+        tflujonetog.Text = flujonetog
+
+        p1.Visible = validarmonto(montoini, montoinig)
+        p2.Visible = validarmonto(efectivo, efectivog)
+        p3.Visible = validarmonto(deposito, depositog)
+        p4.Visible = validarmonto(transfer, transferg)
+        p5.Visible = validarmonto(tcredito, tcreditog)
+        p6.Visible = validarmonto(tdebito, tdebitog)
+        p7.Visible = validarmonto(amex, amexg)
+        p8.Visible = validarmonto(otro, otrog)
+
+        p9.Visible = validarmonto(ingreso, ingresog)
+        p10.Visible = validarmonto(flujobruto, flujobrutog)
+        p11.Visible = validarmonto(gasto, gastog)
+        p12.Visible = validarmonto(retiro, retirog)
+        p13.Visible = validarmonto(flujoneto, flujonetog)
+
+
+
+
+
+
+
+
+
+
+
     End Sub
+    Private Function validarmonto(ByVal m1 As Double, ByVal mg As Double) As Boolean
+        If (CDbl(m1) = CDbl(mg)) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
     Private Sub frmrptcaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -211,17 +309,13 @@ Public Class frmrptcaja
 
         Else
 
-
-
-
-
             If conn.insertarnuevo(caja) Then
                 MsgBox("CAJA REGISTRADA", vbInformation + vbOKOnly, "REPORTE DE CAJA")
             Else
                 MsgBox("CAJA NO REGISTRADO", vbCritical + vbOKOnly, "REPORTE DE CAJA")
             End If
         End If
-
+        consulta()
     End Sub
 
     Private Sub bretiro_Click(sender As Object, e As EventArgs) Handles bretiro.Click
@@ -255,20 +349,10 @@ Public Class frmrptcaja
 
     End Sub
 
-    Private Sub dtFecha_ValueChanged(sender As Object, e As EventArgs) Handles dtFecha.ValueChanged
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         fecha = (New Date(dtFecha.Value.Year, dtFecha.Value.Month, dtFecha.Value.Day, 0, 0, 0))
         consulta()
-    End Sub
-
-    Private Sub dtFecha_Click(sender As Object, e As EventArgs) Handles dtFecha.Click
-
-    End Sub
-
-    Private Sub dtFecha_LostFocus(sender As Object, e As EventArgs) Handles dtFecha.LostFocus
-
-    End Sub
-
-    Private Sub ttransfer_TextChanged(sender As Object, e As EventArgs) Handles ttransfer.TextChanged
-
     End Sub
 End Class

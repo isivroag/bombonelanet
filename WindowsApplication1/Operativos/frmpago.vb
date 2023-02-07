@@ -104,7 +104,7 @@ Public Class frmpago
             Case 1
                 Dim x As New frmreporte
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 2
                 Dim x As New frmreporte2
@@ -172,8 +172,8 @@ Public Class frmpago
 
 
                 pago.Folio_cxc = folio_cxc
-                '  tfecha.Value = (Format(tfecha.Value, "yyyy-MM-dd") + Now.TimeOfDay.ToString)
-                pago.Fecha_pago = Format(tfecha.Value, "yyyy-MM-dd HH:mm:ss")
+                tfecha.Value = (Format(tfecha.Value, "yyyy-MM-dd") + " " + Now.TimeOfDay.ToString)
+                pago.Fecha_pago = (Format(tfecha.Value, "yyyy-MM-dd HH:mm:ss"))
                 pago.Importe_pago = CDbl(tmonto.Text)
                 pago.Id_metodo = sacarclave(cmetodo.Text)
                 pago.Nom_metodo = contenido(cmetodo.Text)

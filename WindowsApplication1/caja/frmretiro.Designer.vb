@@ -22,6 +22,7 @@ Partial Class frmretiro
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmretiro))
         Me.Label4 = New System.Windows.Forms.Label()
         Me.tmonto = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -154,6 +155,7 @@ Partial Class frmretiro
         Me.Controls.Add(Me.tdisponible)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmretiro"
         Me.Text = "frmretiro"
         Me.ToolStrip1.ResumeLayout(False)

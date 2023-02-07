@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmprincipal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmprincipal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -55,10 +55,13 @@ Partial Class frmprincipal
         Me.mncventadetpago = New System.Windows.Forms.ToolStripMenuItem()
         Me.mncingresos = New System.Windows.Forms.ToolStripMenuItem()
         Me.mncinventarios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnctickets = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnccumple = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnhistorial = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnabrircaja = New System.Windows.Forms.ToolStripMenuItem()
         Me.mngastocaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnretirocaja = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnreportecaja = New System.Windows.Forms.ToolStripMenuItem()
         Me.mntools = New System.Windows.Forms.ToolStripMenuItem()
         Me.SUBMNPRIINVENT = New System.Windows.Forms.ToolStripMenuItem()
@@ -66,6 +69,7 @@ Partial Class frmprincipal
         Me.submnproveedor = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnpartida = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnegresos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.tconsulta = New System.Windows.Forms.Timer(Me.components)
         Me.pimpresion = New System.Windows.Forms.Panel()
         Me.grdatos = New System.Windows.Forms.DataGridView()
@@ -77,7 +81,7 @@ Partial Class frmprincipal
         'MenuStrip
         '
         Me.MenuStrip.BackColor = System.Drawing.Color.White
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncatalogos, Me.CONFIGURACIONESToolStripMenuItem, Me.mnprospectos, Me.mnccalendario, Me.mnrecepcion, Me.mnsalida, Me.mnventas, Me.mninventario, Me.mnsalir, Me.mncobranza, Me.mncxc, Me.mnreportes, Me.mnhistorial, Me.ToolStripMenuItem1, Me.mntools, Me.mngastos})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncatalogos, Me.CONFIGURACIONESToolStripMenuItem, Me.mnprospectos, Me.mnccalendario, Me.mnrecepcion, Me.mnsalida, Me.mnventas, Me.mninventario, Me.mnsalir, Me.mncobranza, Me.mncxc, Me.mnreportes, Me.mnhistorial, Me.ToolStripMenuItem1, Me.mntools, Me.mngastos, Me.ToolStripMenuItem2})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(1370, 39)
@@ -256,7 +260,7 @@ Partial Class frmprincipal
         '
         'mnreportes
         '
-        Me.mnreportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncventadet, Me.mncventadetpago, Me.mncingresos, Me.mncinventarios})
+        Me.mnreportes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncventadet, Me.mncventadetpago, Me.mncingresos, Me.mncinventarios, Me.mnctickets, Me.mnccumple})
         Me.mnreportes.Image = Global.Bombonela.My.Resources.Resources.RPT16
         Me.mnreportes.Name = "mnreportes"
         Me.mnreportes.Size = New System.Drawing.Size(72, 35)
@@ -292,6 +296,20 @@ Partial Class frmprincipal
         Me.mncinventarios.Size = New System.Drawing.Size(155, 22)
         Me.mncinventarios.Text = "INVENTARIOS"
         '
+        'mnctickets
+        '
+        Me.mnctickets.Image = Global.Bombonela.My.Resources.Resources.bill
+        Me.mnctickets.Name = "mnctickets"
+        Me.mnctickets.Size = New System.Drawing.Size(155, 22)
+        Me.mnctickets.Text = "TICKETS"
+        '
+        'mnccumple
+        '
+        Me.mnccumple.Image = Global.Bombonela.My.Resources.Resources.CUMPLE
+        Me.mnccumple.Name = "mnccumple"
+        Me.mnccumple.Size = New System.Drawing.Size(155, 22)
+        Me.mnccumple.Text = "CUMPLEAÑOS"
+        '
         'mnhistorial
         '
         Me.mnhistorial.Image = Global.Bombonela.My.Resources.Resources.HISTORIA16
@@ -302,7 +320,7 @@ Partial Class frmprincipal
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnabrircaja, Me.mngastocaja, Me.mnreportecaja})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnabrircaja, Me.mngastocaja, Me.mnretirocaja, Me.mnreportecaja})
         Me.ToolStripMenuItem1.Image = Global.Bombonela.My.Resources.Resources.cashbox
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(48, 35)
@@ -323,6 +341,13 @@ Partial Class frmprincipal
         Me.mngastocaja.Name = "mngastocaja"
         Me.mngastocaja.Size = New System.Drawing.Size(179, 22)
         Me.mngastocaja.Text = "GASTOS CAJA"
+        '
+        'mnretirocaja
+        '
+        Me.mnretirocaja.Image = Global.Bombonela.My.Resources.Resources.bank
+        Me.mnretirocaja.Name = "mnretirocaja"
+        Me.mnretirocaja.Size = New System.Drawing.Size(179, 22)
+        Me.mnretirocaja.Text = "RETIROS DE CAJA"
         '
         'mnreportecaja
         '
@@ -375,6 +400,14 @@ Partial Class frmprincipal
         Me.submnegresos.Name = "submnegresos"
         Me.submnegresos.Size = New System.Drawing.Size(152, 22)
         Me.submnegresos.Text = "EGRESOS"
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Image = Global.Bombonela.My.Resources.Resources.WAREHOUSE
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(65, 35)
+        Me.ToolStripMenuItem2.Text = "BODEGA"
+        Me.ToolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'tconsulta
         '
@@ -507,4 +540,8 @@ Partial Class frmprincipal
     Friend WithEvents mnabrircaja As ToolStripMenuItem
     Friend WithEvents mngastocaja As ToolStripMenuItem
     Friend WithEvents mnreportecaja As ToolStripMenuItem
+    Friend WithEvents mnretirocaja As ToolStripMenuItem
+    Friend WithEvents mnctickets As ToolStripMenuItem
+    Friend WithEvents mnccumple As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
 End Class
