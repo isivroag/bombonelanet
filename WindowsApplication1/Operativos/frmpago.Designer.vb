@@ -219,9 +219,9 @@ Partial Class frmpago
         Me.cfact.AutoSize = True
         Me.cfact.Location = New System.Drawing.Point(15, 51)
         Me.cfact.Name = "cfact"
-        Me.cfact.Size = New System.Drawing.Size(76, 17)
+        Me.cfact.Size = New System.Drawing.Size(171, 17)
         Me.cfact.TabIndex = 67
-        Me.cfact.Text = "FACTURA"
+        Me.cfact.Text = "ClIENTE SOLICITA FACTURA"
         Me.cfact.UseVisualStyleBackColor = True
         '
         'Label9

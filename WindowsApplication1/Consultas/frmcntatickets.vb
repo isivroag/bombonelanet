@@ -14,7 +14,7 @@ Public Class frmcntatickets
         grdetalle.Rows.Clear()
         grdetalle.Columns.Clear()
 
-        conn.consulta(grdetalle, "SELECT folio_pago,folio_cxc,fecha_pago,nom_clie,importe_pago,nom_metodo,nom_col,estado FROM vticket where date(fecha_pago) between '" & Format(fechaini, "yyyy-MM-dd") & "' and '" & Format(fechafin, "yyyy-MM-dd") & "' order by folio_pago")
+        conn.consulta(grdetalle, "SELECT folio_pago,folio_cxc,fecha_pago,nom_clie,importe_pago,nom_metodo,nom_col,estado FROM vticket where date(fecha_pago) between '" & Format(fechaini, "yyyy-MM-dd") & "' and '" & Format(fechafin, "yyyy-MM-dd") & "' group by folio_pago order by folio_pago")
 
         formatogrid()
 

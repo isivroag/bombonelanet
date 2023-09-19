@@ -1392,8 +1392,8 @@ Public Class c_mysqlconn
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.InsertCommand = New MySqlCommand("insert into pago(folio_cxc,folio_fis,fecha_pago,importe_pago,id_metodo,nom_metodo,dinero_pago,cambio_pago,id_col,nom_col,tipo_pago,saldoini_cxc,saldofin_cxc,letra_pago)" &
-                                                       " values (@folio_cxc,@folio_fis,@fecha_pago,@importe_pago,@id_metodo,@nom_metodo,@dinero_pago,@cambio_pago,@id_col,@nom_col,@tipo_pago,@saldoini_cxc,@saldofin_cxc,@letra_pago)", _conexion)
+            adaptador.InsertCommand = New MySqlCommand("insert into pago(folio_cxc,folio_fis,fecha_pago,importe_pago,id_metodo,nom_metodo,dinero_pago,cambio_pago,id_col,nom_col,tipo_pago,saldoini_cxc,saldofin_cxc,letra_pago,fclie,facturable)" &
+                                                       " values (@folio_cxc,@folio_fis,@fecha_pago,@importe_pago,@id_metodo,@nom_metodo,@dinero_pago,@cambio_pago,@id_col,@nom_col,@tipo_pago,@saldoini_cxc,@saldofin_cxc,@letra_pago,@fclie,@facturable)", _conexion)
             adaptador.InsertCommand.Parameters.Add("@folio_cxc", MySqlDbType.Int64).Value = datos.Folio_cxc
             adaptador.InsertCommand.Parameters.Add("@folio_fis", MySqlDbType.Int64).Value = datos.Folio_fis
             adaptador.InsertCommand.Parameters.Add("@fecha_pago", MySqlDbType.DateTime).Value = Format(datos.Fecha_pago, "yyyy-MM-dd HH:mm:ss")
@@ -1408,6 +1408,8 @@ Public Class c_mysqlconn
             adaptador.InsertCommand.Parameters.Add("@saldoini_cxc", MySqlDbType.Double).Value = datos.Saldoini_cxc
             adaptador.InsertCommand.Parameters.Add("@saldofin_cxc", MySqlDbType.Double).Value = datos.Saldofin_cxc
             adaptador.InsertCommand.Parameters.Add("@letra_pago", MySqlDbType.String).Value = datos.Letra_pago
+            adaptador.InsertCommand.Parameters.Add("@fclie", MySqlDbType.Int16).Value = datos.Fclie
+            adaptador.InsertCommand.Parameters.Add("@facturable", MySqlDbType.Int16).Value = datos.Facturable
             _conexion.Open()
             adaptador.InsertCommand.Connection = _conexion
             adaptador.InsertCommand.ExecuteNonQuery()
@@ -2175,6 +2177,8 @@ Public Class c_mysqlconn
 
                 Case 2
                     adaptador.UpdateCommand = New MySqlCommand("update retiro Set estado_retiro=0,usuario_can=@usuario,fecha_can=@fecha,motivo_can=@motivo where id_retiro=@folio", _conexion)
+                Case 3
+                    adaptador.UpdateCommand = New MySqlCommand("update transfer Set estado_trans=0,usuario_can=@usuario,fecha_can=@fecha,motivo_can=@motivo where folio_trans=@folio", _conexion)
             End Select
             adaptador.UpdateCommand.Parameters.Add("@folio", MySqlDbType.String).Value = folio
             adaptador.UpdateCommand.Parameters.Add("@usuario", MySqlDbType.String).Value = usuario
@@ -2201,12 +2205,14 @@ Public Class c_mysqlconn
         Dim estado As Boolean = True
         Try
             conexion()
-            adaptador.InsertCommand = New MySqlCommand("insert into transfer (origen,destino,fecha_trans,obs_trans,importe) " &
-                                                       "values(@origen,@destino,@fecha_trans,@obs_trans,@importe)", _conexion)
+            adaptador.InsertCommand = New MySqlCommand("insert into transfer (origen,destino,fecha_trans,obs_trans,importe,nom_origen,nom_destino) " &
+                                                       "values(@origen,@destino,@fecha_trans,@obs_trans,@importe,@nom_origen,@nom_destino)", _conexion)
             adaptador.InsertCommand.Parameters.Add("@origen", MySqlDbType.VarChar).Value = datos.Origen
             adaptador.InsertCommand.Parameters.Add("@destino", MySqlDbType.VarChar).Value = datos.Destino
             adaptador.InsertCommand.Parameters.Add("@fecha_trans", MySqlDbType.Date).Value = datos.Fecha_trans
             adaptador.InsertCommand.Parameters.Add("@obs_trans", MySqlDbType.VarChar).Value = datos.Obs_trans
+            adaptador.InsertCommand.Parameters.Add("@nom_origen", MySqlDbType.VarChar).Value = datos.Nom_origen
+            adaptador.InsertCommand.Parameters.Add("@nom_destino", MySqlDbType.VarChar).Value = datos.Nom_destino
             adaptador.InsertCommand.Parameters.Add("@importe", MySqlDbType.Double).Value = datos.Importe
 
             _conexion.Open()
@@ -2252,6 +2258,8 @@ Public Class c_mysqlconn
         End Try
         Return estado
     End Function
+
+
 
 #End Region
 

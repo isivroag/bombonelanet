@@ -15,6 +15,8 @@
     Private _saldofin_cxc As Double
     Private _letra_pago As String
     Private _estado_pago As Boolean
+    Private _fclie As Int16
+    Private _facturable As Int16
 
     Public Property Folio_pago As Long
         Get
@@ -157,6 +159,24 @@
         End Get
         Set(value As String)
             _letra_pago = value
+        End Set
+    End Property
+
+    Public Property Fclie As Short
+        Get
+            Return _fclie
+        End Get
+        Set(value As Short)
+            _fclie = value
+        End Set
+    End Property
+
+    Public Property Facturable As Short
+        Get
+            Return _facturable
+        End Get
+        Set(value As Short)
+            _facturable = value
         End Set
     End Property
 End Class

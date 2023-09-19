@@ -13,7 +13,62 @@ Public Class frmmovalmacenp
     Public subtotal As Double
     Public flag As Integer
     Public idorg As Integer
+    Public iddes As Integer
     Public origen As String
+    Public destino As String
+
+
+    Public Sub buscar(ByVal folio As Int64)
+        bguardar.Visible = False
+        bcancelar.Visible = False
+        bsalir.Visible = True
+        chentrada.Visible = False
+        chsalida.Visible = False
+        Button.Enabled = False
+        Button1.Enabled = False
+        ttotal.Enabled = False
+
+
+        conn = New c_mysqlconn
+        table = New DataTable
+        table = conn.consulta("Select * from transfer where folio_trans='" & folio & "'")
+        If table.Rows.Count > 0 Then
+
+            tfolio.Text = table.Rows(0).Item("folio_trans")
+            idorg = table.Rows(0).Item("origen")
+            origen = table.Rows(0).Item("nom_origen")
+            iddes = table.Rows(0).Item("destino")
+            destino = table.Rows(0).Item("nom_destino")
+
+
+            ttotal.Text = table.Rows(0).Item("importe")
+            tfecha.Text = table.Rows(0).Item("fecha_trans")
+            calmaceno.Text = idorg & " " & origen
+            calmacend.Text = iddes & " " & destino
+            Panel1.Enabled = False
+            tconcepto.Text = table.Rows(0).Item("obs_trans")
+
+
+        End If
+
+
+
+        conn = New c_mysqlconn
+        grdatos.DataSource = Nothing
+        grdatos.Rows.Clear()
+        grdatos.Columns.Clear()
+
+        conn.consulta(grdatos, "select id_reg,folio_transfer,id_prod,clave_prod,concepto,cantidad,unidad,costo,importe from transfer_detalle where folio_transfer='" & folio & "' order by id_reg")
+        If grdatos.Rows.Count = 0 Then
+
+            grdatos.DataSource = Nothing
+            grdatos.Rows.Clear()
+            grdatos.Columns.Clear()
+            grdatos.ColumnCount = 9
+        End If
+        formatogrid()
+
+    End Sub
 
 
     Private Sub verificar()
@@ -55,7 +110,6 @@ Public Class frmmovalmacenp
 
         grdatos.Columns(0).HeaderText = "REG"
         grdatos.Columns(1).HeaderText = "FOLIO TRANSFER"
-
         grdatos.Columns(2).HeaderText = "ID_PROD"
         grdatos.Columns(3).HeaderText = "CLAVE"
         grdatos.Columns(4).HeaderText = "CONCEPTO"
@@ -168,6 +222,8 @@ Public Class frmmovalmacenp
         cuenta.Origen = sacarclave(calmaceno.Text)
         cuenta.Destino = sacarclave(calmacend.Text)
         cuenta.Obs_trans = tconcepto.Text
+        cuenta.Nom_origen = contenido(calmaceno.Text)
+        cuenta.Nom_destino = contenido(calmacend.Text)
 
         conn = New c_mysqlconn
 
@@ -225,7 +281,7 @@ Public Class frmmovalmacenp
 
                     'FUNCION PARA HABILITAR INVENTARIO
                     conn = New c_mysqlconn
-                        conn.insertarmov(movimiento)
+                    conn.insertarmov(movimiento)
 
                     conn = New c_mysqlconn
                     conn.actualizarinv(row.Cells(2).Value, sacarclave(calmaceno.Text), finalo)
@@ -284,10 +340,40 @@ Public Class frmmovalmacenp
 
 
 
+
                 End If
 
             Next
+            imprimir()
         End If
 
+    End Sub
+    Private Sub imprimir()
+        'frmrepo.nombre = "CHEJERE.RptTicket.rdlc"
+        'frmrepo.folio_cob = folio_cob
+
+        '  frmrepo.Show()
+        ' frmrepo.ticket()
+
+        Dim x As New frmreportebodega
+        x.folio = tfolio.Text
+        x.documento()
+        x.ShowDialog()
+
+
+
+    End Sub
+
+    Private Sub mncIMPRIMIR_Click(sender As Object, e As EventArgs) Handles mncIMPRIMIR.Click
+
+        imprimir()
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If grdatos.Rows.Count > 0 Then
+            grdatos.Rows.Remove(grdatos.CurrentRow())
+        End If
+        sumartotal()
     End Sub
 End Class

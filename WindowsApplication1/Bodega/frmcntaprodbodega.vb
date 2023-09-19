@@ -127,6 +127,7 @@ Public Class frmcntaprodbodega
 
 
         frmauxbodega.Show()
+        frmauxbodega.almacen = almacen
         frmauxbodega.bproducto(registro, existencias)
         Dispose()
 

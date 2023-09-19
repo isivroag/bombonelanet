@@ -32,6 +32,8 @@ Partial Class frmmovalmacenp
         Me.Label8 = New System.Windows.Forms.Label()
         Me.tconcepto = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.chentrada = New System.Windows.Forms.RadioButton()
+        Me.chsalida = New System.Windows.Forms.RadioButton()
         Me.calmacend = New System.Windows.Forms.ComboBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.calmaceno = New System.Windows.Forms.ComboBox()
@@ -43,17 +45,16 @@ Partial Class frmmovalmacenp
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tfolio = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.bnuevo = New System.Windows.Forms.ToolStripButton()
         Me.bguardar = New System.Windows.Forms.ToolStripButton()
+        Me.bnuevo = New System.Windows.Forms.ToolStripButton()
         Me.bsalir = New System.Windows.Forms.ToolStripButton()
         Me.bcancelar = New System.Windows.Forms.ToolStripButton()
-        Me.chsalida = New System.Windows.Forms.RadioButton()
-        Me.chentrada = New System.Windows.Forms.RadioButton()
+        Me.mncIMPRIMIR = New System.Windows.Forms.ToolStripButton()
+        Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
-        CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip1.SuspendLayout()
+        CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label6
@@ -106,18 +107,37 @@ Partial Class frmmovalmacenp
         Me.Panel1.Controls.Add(Me.tfecha)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.tconcepto)
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.Button)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.ttotal)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.tfolio)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.grdatos)
         Me.Panel1.Location = New System.Drawing.Point(24, 96)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(760, 503)
+        Me.Panel1.Size = New System.Drawing.Size(755, 152)
         Me.Panel1.TabIndex = 161
+        '
+        'chentrada
+        '
+        Me.chentrada.AutoSize = True
+        Me.chentrada.Location = New System.Drawing.Point(157, 38)
+        Me.chentrada.Name = "chentrada"
+        Me.chentrada.Size = New System.Drawing.Size(190, 17)
+        Me.chentrada.TabIndex = 176
+        Me.chentrada.Text = "PROCESAR ENTRADA Y SALIDA"
+        Me.chentrada.UseVisualStyleBackColor = True
+        Me.chentrada.Visible = False
+        '
+        'chsalida
+        '
+        Me.chsalida.AutoSize = True
+        Me.chsalida.Checked = True
+        Me.chsalida.Location = New System.Drawing.Point(406, 36)
+        Me.chsalida.Name = "chsalida"
+        Me.chsalida.Size = New System.Drawing.Size(125, 17)
+        Me.chsalida.TabIndex = 175
+        Me.chsalida.TabStop = True
+        Me.chsalida.Text = "PROCESAR SALIDA"
+        Me.chsalida.UseVisualStyleBackColor = True
+        Me.chsalida.Visible = False
         '
         'calmacend
         '
@@ -163,7 +183,7 @@ Partial Class frmmovalmacenp
         '
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = Global.Bombonela.My.Resources.Resources.minus26_2
-        Me.Button1.Location = New System.Drawing.Point(718, 192)
+        Me.Button1.Location = New System.Drawing.Point(740, 292)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(39, 34)
         Me.Button1.TabIndex = 10
@@ -173,7 +193,7 @@ Partial Class frmmovalmacenp
         '
         Me.Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button.Image = Global.Bombonela.My.Resources.Resources.add_new_26
-        Me.Button.Location = New System.Drawing.Point(718, 154)
+        Me.Button.Location = New System.Drawing.Point(740, 254)
         Me.Button.Name = "Button"
         Me.Button.Size = New System.Drawing.Size(39, 32)
         Me.Button.TabIndex = 9
@@ -183,7 +203,7 @@ Partial Class frmmovalmacenp
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(570, 452)
+        Me.Label4.Location = New System.Drawing.Point(594, 555)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 12
@@ -192,10 +212,12 @@ Partial Class frmmovalmacenp
         'ttotal
         '
         Me.ttotal.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ttotal.Location = New System.Drawing.Point(573, 468)
+        Me.ttotal.Location = New System.Drawing.Point(597, 571)
         Me.ttotal.Name = "ttotal"
+        Me.ttotal.ReadOnly = True
         Me.ttotal.Size = New System.Drawing.Size(139, 22)
         Me.ttotal.TabIndex = 14
+        Me.ttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label3
         '
@@ -224,6 +246,74 @@ Partial Class frmmovalmacenp
         Me.Label1.Size = New System.Drawing.Size(42, 13)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "FECHA"
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.AutoSize = False
+        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(219, Byte), Integer))
+        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bguardar, Me.bnuevo, Me.bsalir, Me.bcancelar, Me.mncIMPRIMIR})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(785, 48)
+        Me.ToolStrip1.TabIndex = 160
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'bguardar
+        '
+        Me.bguardar.BackColor = System.Drawing.Color.White
+        Me.bguardar.Image = Global.Bombonela.My.Resources.Resources.save_26
+        Me.bguardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bguardar.Name = "bguardar"
+        Me.bguardar.Size = New System.Drawing.Size(65, 45)
+        Me.bguardar.Text = "GUARDAR"
+        Me.bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bnuevo
+        '
+        Me.bnuevo.BackColor = System.Drawing.Color.White
+        Me.bnuevo.Image = Global.Bombonela.My.Resources.Resources.add_new_261
+        Me.bnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bnuevo.Name = "bnuevo"
+        Me.bnuevo.Size = New System.Drawing.Size(50, 45)
+        Me.bnuevo.Text = "NUEVO"
+        Me.bnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.bnuevo.Visible = False
+        '
+        'bsalir
+        '
+        Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.bsalir.BackColor = System.Drawing.Color.White
+        Me.bsalir.Image = Global.Bombonela.My.Resources.Resources.exit_26
+        Me.bsalir.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bsalir.Name = "bsalir"
+        Me.bsalir.Size = New System.Drawing.Size(41, 45)
+        Me.bsalir.Text = "SALIR"
+        Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.bsalir.ToolTipText = "REGRESAR"
+        '
+        'bcancelar
+        '
+        Me.bcancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.bcancelar.BackColor = System.Drawing.Color.White
+        Me.bcancelar.Image = Global.Bombonela.My.Resources.Resources.exit_26
+        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcancelar.Name = "bcancelar"
+        Me.bcancelar.Size = New System.Drawing.Size(71, 45)
+        Me.bcancelar.Text = "CANCELAR"
+        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.bcancelar.ToolTipText = "CANCELAR"
+        Me.bcancelar.Visible = False
+        '
+        'mncIMPRIMIR
+        '
+        Me.mncIMPRIMIR.BackColor = System.Drawing.Color.White
+        Me.mncIMPRIMIR.Image = Global.Bombonela.My.Resources.Resources.PRINT26
+        Me.mncIMPRIMIR.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mncIMPRIMIR.Name = "mncIMPRIMIR"
+        Me.mncIMPRIMIR.Size = New System.Drawing.Size(63, 45)
+        Me.mncIMPRIMIR.Text = "IMPRIMIR"
+        Me.mncIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'grdatos
         '
@@ -255,7 +345,7 @@ Partial Class frmmovalmacenp
         Me.grdatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.grdatos.EnableHeadersVisualStyles = False
         Me.grdatos.GridColor = System.Drawing.Color.White
-        Me.grdatos.Location = New System.Drawing.Point(13, 154)
+        Me.grdatos.Location = New System.Drawing.Point(35, 250)
         Me.grdatos.MultiSelect = False
         Me.grdatos.Name = "grdatos"
         Me.grdatos.ReadOnly = True
@@ -270,106 +360,31 @@ Partial Class frmmovalmacenp
         Me.grdatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.grdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.grdatos.Size = New System.Drawing.Size(699, 295)
-        Me.grdatos.TabIndex = 8
+        Me.grdatos.TabIndex = 163
         Me.grdatos.VirtualMode = True
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.AutoSize = False
-        Me.ToolStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(219, Byte), Integer))
-        Me.ToolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bguardar, Me.bnuevo, Me.bsalir, Me.bcancelar})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(796, 48)
-        Me.ToolStrip1.TabIndex = 160
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'bnuevo
-        '
-        Me.bnuevo.BackColor = System.Drawing.Color.White
-        Me.bnuevo.Image = Global.Bombonela.My.Resources.Resources.add_new_261
-        Me.bnuevo.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bnuevo.Name = "bnuevo"
-        Me.bnuevo.Size = New System.Drawing.Size(50, 45)
-        Me.bnuevo.Text = "NUEVO"
-        Me.bnuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.bnuevo.Visible = False
-        '
-        'bguardar
-        '
-        Me.bguardar.BackColor = System.Drawing.Color.White
-        Me.bguardar.Image = Global.Bombonela.My.Resources.Resources.save_26
-        Me.bguardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bguardar.Name = "bguardar"
-        Me.bguardar.Size = New System.Drawing.Size(65, 45)
-        Me.bguardar.Text = "GUARDAR"
-        Me.bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bsalir
-        '
-        Me.bsalir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.bsalir.BackColor = System.Drawing.Color.White
-        Me.bsalir.Image = Global.Bombonela.My.Resources.Resources.exit_26
-        Me.bsalir.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bsalir.Name = "bsalir"
-        Me.bsalir.Size = New System.Drawing.Size(41, 45)
-        Me.bsalir.Text = "SALIR"
-        Me.bsalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.bsalir.ToolTipText = "REGRESAR"
-        Me.bsalir.Visible = False
-        '
-        'bcancelar
-        '
-        Me.bcancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.bcancelar.BackColor = System.Drawing.Color.White
-        Me.bcancelar.Image = Global.Bombonela.My.Resources.Resources.exit_26
-        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bcancelar.Name = "bcancelar"
-        Me.bcancelar.Size = New System.Drawing.Size(71, 45)
-        Me.bcancelar.Text = "CANCELAR"
-        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.bcancelar.ToolTipText = "CANCELAR"
-        '
-        'chsalida
-        '
-        Me.chsalida.AutoSize = True
-        Me.chsalida.Location = New System.Drawing.Point(406, 36)
-        Me.chsalida.Name = "chsalida"
-        Me.chsalida.Size = New System.Drawing.Size(125, 17)
-        Me.chsalida.TabIndex = 175
-        Me.chsalida.TabStop = True
-        Me.chsalida.Text = "PROCESAR SALIDA"
-        Me.chsalida.UseVisualStyleBackColor = True
-        '
-        'chentrada
-        '
-        Me.chentrada.AutoSize = True
-        Me.chentrada.Location = New System.Drawing.Point(157, 38)
-        Me.chentrada.Name = "chentrada"
-        Me.chentrada.Size = New System.Drawing.Size(190, 17)
-        Me.chentrada.TabIndex = 176
-        Me.chentrada.TabStop = True
-        Me.chentrada.Text = "PROCESAR ENTRADA Y SALIDA"
-        Me.chentrada.UseVisualStyleBackColor = True
         '
         'frmmovalmacenp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(796, 605)
+        Me.ClientSize = New System.Drawing.Size(785, 605)
+        Me.Controls.Add(Me.grdatos)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ToolStrip1)
+        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.ttotal)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Button)
+        Me.Controls.Add(Me.Button1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmmovalmacenp"
         Me.Text = "frmmovalmacenp"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.grdatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
+        CType(Me.grdatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -387,7 +402,6 @@ Partial Class frmmovalmacenp
     Friend WithEvents Label3 As Label
     Friend WithEvents tfolio As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents grdatos As DataGridView
     Friend WithEvents bcancelar As ToolStripButton
     Friend WithEvents bsalir As ToolStripButton
     Friend WithEvents bguardar As ToolStripButton
@@ -399,4 +413,6 @@ Partial Class frmmovalmacenp
     Friend WithEvents Label7 As Label
     Friend WithEvents chentrada As RadioButton
     Friend WithEvents chsalida As RadioButton
+    Friend WithEvents mncIMPRIMIR As ToolStripButton
+    Friend WithEvents grdatos As DataGridView
 End Class

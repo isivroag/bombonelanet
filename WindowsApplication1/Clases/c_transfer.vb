@@ -6,7 +6,8 @@
     Private _obs_trans As String
     Private _importe As Double
     Private _estado_trans As Boolean
-
+    Private _nom_origen As String
+    Private _nom_destino As String
     Public Property Folio_transfer As Long
         Get
             Return _folio_transfer
@@ -69,6 +70,24 @@
         End Get
         Set(value As String)
             _obs_trans = value
+        End Set
+    End Property
+
+    Public Property Nom_origen As String
+        Get
+            Return _nom_origen
+        End Get
+        Set(value As String)
+            _nom_origen = value
+        End Set
+    End Property
+
+    Public Property Nom_destino As String
+        Get
+            Return _nom_destino
+        End Get
+        Set(value As String)
+            _nom_destino = value
         End Set
     End Property
 End Class

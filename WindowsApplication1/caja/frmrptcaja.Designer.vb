@@ -24,6 +24,10 @@ Partial Class frmrptcaja
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmrptcaja))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.bguardar = New System.Windows.Forms.ToolStripButton()
+        Me.bretiro = New System.Windows.Forms.ToolStripButton()
+        Me.bcancelar = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dtFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -67,10 +71,6 @@ Partial Class frmrptcaja
         Me.tefectivog = New System.Windows.Forms.TextBox()
         Me.tinicialg = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.bguardar = New System.Windows.Forms.ToolStripButton()
-        Me.bretiro = New System.Windows.Forms.ToolStripButton()
-        Me.bcancelar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.p2 = New System.Windows.Forms.PictureBox()
         Me.p4 = New System.Windows.Forms.PictureBox()
         Me.p3 = New System.Windows.Forms.PictureBox()
@@ -112,6 +112,48 @@ Partial Class frmrptcaja
         Me.ToolStrip1.Size = New System.Drawing.Size(293, 48)
         Me.ToolStrip1.TabIndex = 7
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'bguardar
+        '
+        Me.bguardar.BackColor = System.Drawing.Color.White
+        Me.bguardar.Image = Global.Bombonela.My.Resources.Resources.save_26
+        Me.bguardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bguardar.Name = "bguardar"
+        Me.bguardar.Size = New System.Drawing.Size(65, 45)
+        Me.bguardar.Text = "GUARDAR"
+        Me.bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bretiro
+        '
+        Me.bretiro.BackColor = System.Drawing.Color.White
+        Me.bretiro.Image = Global.Bombonela.My.Resources.Resources.RETIRO
+        Me.bretiro.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bretiro.Name = "bretiro"
+        Me.bretiro.Size = New System.Drawing.Size(49, 45)
+        Me.bretiro.Text = "RETIRO"
+        Me.bretiro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bcancelar
+        '
+        Me.bcancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.bcancelar.BackColor = System.Drawing.Color.White
+        Me.bcancelar.Image = Global.Bombonela.My.Resources.Resources.undo_26
+        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcancelar.Name = "bcancelar"
+        Me.bcancelar.Size = New System.Drawing.Size(71, 45)
+        Me.bcancelar.Text = "CANCELAR"
+        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.BackColor = System.Drawing.Color.White
+        Me.ToolStripButton1.Image = Global.Bombonela.My.Resources.Resources.PRINT26
+        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.Size = New System.Drawing.Size(63, 45)
+        Me.ToolStripButton1.Text = "IMPRIMIR"
+        Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolStripButton1.ToolTipText = "REIMPRIMIR"
         '
         'Label1
         '
@@ -521,48 +563,6 @@ Partial Class frmrptcaja
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 212
         Me.PictureBox1.TabStop = False
-        '
-        'bguardar
-        '
-        Me.bguardar.BackColor = System.Drawing.Color.White
-        Me.bguardar.Image = Global.Bombonela.My.Resources.Resources.save_26
-        Me.bguardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bguardar.Name = "bguardar"
-        Me.bguardar.Size = New System.Drawing.Size(65, 45)
-        Me.bguardar.Text = "GUARDAR"
-        Me.bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bretiro
-        '
-        Me.bretiro.BackColor = System.Drawing.Color.White
-        Me.bretiro.Image = Global.Bombonela.My.Resources.Resources.RETIRO
-        Me.bretiro.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bretiro.Name = "bretiro"
-        Me.bretiro.Size = New System.Drawing.Size(49, 45)
-        Me.bretiro.Text = "RETIRO"
-        Me.bretiro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bcancelar
-        '
-        Me.bcancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.bcancelar.BackColor = System.Drawing.Color.White
-        Me.bcancelar.Image = Global.Bombonela.My.Resources.Resources.undo_26
-        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bcancelar.Name = "bcancelar"
-        Me.bcancelar.Size = New System.Drawing.Size(71, 45)
-        Me.bcancelar.Text = "CANCELAR"
-        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.White
-        Me.ToolStripButton1.Image = Global.Bombonela.My.Resources.Resources.PRINT26
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(63, 45)
-        Me.ToolStripButton1.Text = "IMPRIMIR"
-        Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.ToolStripButton1.ToolTipText = "REIMPRIMIR"
         '
         'p2
         '

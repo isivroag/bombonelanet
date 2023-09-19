@@ -30,18 +30,18 @@ Partial Class frmprincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmprincipal))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.mncatalogos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MNCATPROD = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MNCATSERV = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SUBMNMARCA = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TIPOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnproductos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnservicios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnmarca = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smntipo = New System.Windows.Forms.ToolStripMenuItem()
         Me.CONFIGURACIONESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SUBMNCABINAS = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SUBMNALMACENES = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnareas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnalmacenes = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnprospectos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PROSPECTOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CLIENTESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.COLABORADORESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PUESTOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnprospectos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnclientes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smncolaboradores = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnpuestos = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnccalendario = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnrecepcion = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnsalida = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,30 +58,34 @@ Partial Class frmprincipal
         Me.mnctickets = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnccumple = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnhistorial = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnabrircaja = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mngastocaja = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnretirocaja = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnreportecaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mncaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnabrircaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smngastocaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnretirocaja = New System.Windows.Forms.ToolStripMenuItem()
+        Me.smnreportecaja = New System.Windows.Forms.ToolStripMenuItem()
         Me.mntools = New System.Windows.Forms.ToolStripMenuItem()
         Me.SUBMNPRIINVENT = New System.Windows.Forms.ToolStripMenuItem()
         Me.mngastos = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnproveedor = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnpartida = New System.Windows.Forms.ToolStripMenuItem()
         Me.submnegresos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnbodega = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mncambiar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tconsulta = New System.Windows.Forms.Timer(Me.components)
         Me.pimpresion = New System.Windows.Forms.Panel()
         Me.grdatos = New System.Windows.Forms.DataGridView()
+        Me.barraestado = New System.Windows.Forms.StatusStrip()
+        Me.lbarusuario = New System.Windows.Forms.ToolStripStatusLabel()
         Me.MenuStrip.SuspendLayout()
         Me.pimpresion.SuspendLayout()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.barraestado.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
         Me.MenuStrip.BackColor = System.Drawing.Color.White
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncatalogos, Me.CONFIGURACIONESToolStripMenuItem, Me.mnprospectos, Me.mnccalendario, Me.mnrecepcion, Me.mnsalida, Me.mnventas, Me.mninventario, Me.mnsalir, Me.mncobranza, Me.mncxc, Me.mnreportes, Me.mnhistorial, Me.ToolStripMenuItem1, Me.mntools, Me.mngastos, Me.ToolStripMenuItem2})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncatalogos, Me.CONFIGURACIONESToolStripMenuItem, Me.mnprospectos, Me.mnccalendario, Me.mnrecepcion, Me.mnsalida, Me.mnventas, Me.mninventario, Me.mnsalir, Me.mncobranza, Me.mncxc, Me.mnreportes, Me.mnhistorial, Me.mncaja, Me.mntools, Me.mngastos, Me.mnbodega, Me.mncambiar})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(1370, 39)
@@ -90,106 +94,106 @@ Partial Class frmprincipal
         '
         'mncatalogos
         '
-        Me.mncatalogos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MNCATPROD, Me.MNCATSERV, Me.SUBMNMARCA, Me.TIPOSToolStripMenuItem})
+        Me.mncatalogos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smnproductos, Me.smnservicios, Me.smnmarca, Me.smntipo})
         Me.mncatalogos.Image = Global.Bombonela.My.Resources.Resources.list16
         Me.mncatalogos.Name = "mncatalogos"
         Me.mncatalogos.Size = New System.Drawing.Size(85, 35)
         Me.mncatalogos.Text = "CATALOGOS"
         Me.mncatalogos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'MNCATPROD
+        'smnproductos
         '
-        Me.MNCATPROD.BackColor = System.Drawing.Color.White
-        Me.MNCATPROD.Image = Global.Bombonela.My.Resources.Resources.tube_16
-        Me.MNCATPROD.Name = "MNCATPROD"
-        Me.MNCATPROD.Size = New System.Drawing.Size(141, 22)
-        Me.MNCATPROD.Text = "PRODUCTOS"
+        Me.smnproductos.BackColor = System.Drawing.Color.White
+        Me.smnproductos.Image = Global.Bombonela.My.Resources.Resources.tube_16
+        Me.smnproductos.Name = "smnproductos"
+        Me.smnproductos.Size = New System.Drawing.Size(141, 22)
+        Me.smnproductos.Text = "PRODUCTOS"
         '
-        'MNCATSERV
+        'smnservicios
         '
-        Me.MNCATSERV.BackColor = System.Drawing.Color.White
-        Me.MNCATSERV.Image = Global.Bombonela.My.Resources.Resources.service16
-        Me.MNCATSERV.Name = "MNCATSERV"
-        Me.MNCATSERV.Size = New System.Drawing.Size(141, 22)
-        Me.MNCATSERV.Text = "SERVICIOS"
+        Me.smnservicios.BackColor = System.Drawing.Color.White
+        Me.smnservicios.Image = Global.Bombonela.My.Resources.Resources.service16
+        Me.smnservicios.Name = "smnservicios"
+        Me.smnservicios.Size = New System.Drawing.Size(141, 22)
+        Me.smnservicios.Text = "SERVICIOS"
         '
-        'SUBMNMARCA
+        'smnmarca
         '
-        Me.SUBMNMARCA.BackColor = System.Drawing.Color.White
-        Me.SUBMNMARCA.Image = Global.Bombonela.My.Resources.Resources.brand16
-        Me.SUBMNMARCA.Name = "SUBMNMARCA"
-        Me.SUBMNMARCA.Size = New System.Drawing.Size(141, 22)
-        Me.SUBMNMARCA.Text = "MARCA"
+        Me.smnmarca.BackColor = System.Drawing.Color.White
+        Me.smnmarca.Image = Global.Bombonela.My.Resources.Resources.brand16
+        Me.smnmarca.Name = "smnmarca"
+        Me.smnmarca.Size = New System.Drawing.Size(141, 22)
+        Me.smnmarca.Text = "MARCA"
         '
-        'TIPOSToolStripMenuItem
+        'smntipo
         '
-        Me.TIPOSToolStripMenuItem.BackColor = System.Drawing.Color.White
-        Me.TIPOSToolStripMenuItem.Image = Global.Bombonela.My.Resources.Resources.type16
-        Me.TIPOSToolStripMenuItem.Name = "TIPOSToolStripMenuItem"
-        Me.TIPOSToolStripMenuItem.Size = New System.Drawing.Size(141, 22)
-        Me.TIPOSToolStripMenuItem.Text = "TIPOS"
+        Me.smntipo.BackColor = System.Drawing.Color.White
+        Me.smntipo.Image = Global.Bombonela.My.Resources.Resources.type16
+        Me.smntipo.Name = "smntipo"
+        Me.smntipo.Size = New System.Drawing.Size(141, 22)
+        Me.smntipo.Text = "TIPOS"
         '
         'CONFIGURACIONESToolStripMenuItem
         '
-        Me.CONFIGURACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SUBMNCABINAS, Me.SUBMNALMACENES})
+        Me.CONFIGURACIONESToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smnareas, Me.smnalmacenes})
         Me.CONFIGURACIONESToolStripMenuItem.Image = Global.Bombonela.My.Resources.Resources.home16
         Me.CONFIGURACIONESToolStripMenuItem.Name = "CONFIGURACIONESToolStripMenuItem"
         Me.CONFIGURACIONESToolStripMenuItem.Size = New System.Drawing.Size(114, 35)
         Me.CONFIGURACIONESToolStripMenuItem.Text = "CONFIGURACION"
         Me.CONFIGURACIONESToolStripMenuItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'SUBMNCABINAS
+        'smnareas
         '
-        Me.SUBMNCABINAS.BackColor = System.Drawing.Color.White
-        Me.SUBMNCABINAS.Image = Global.Bombonela.My.Resources.Resources.cab16
-        Me.SUBMNCABINAS.Name = "SUBMNCABINAS"
-        Me.SUBMNCABINAS.Size = New System.Drawing.Size(142, 22)
-        Me.SUBMNCABINAS.Text = "AREAS"
+        Me.smnareas.BackColor = System.Drawing.Color.White
+        Me.smnareas.Image = Global.Bombonela.My.Resources.Resources.cab16
+        Me.smnareas.Name = "smnareas"
+        Me.smnareas.Size = New System.Drawing.Size(152, 22)
+        Me.smnareas.Text = "AREAS"
         '
-        'SUBMNALMACENES
+        'smnalmacenes
         '
-        Me.SUBMNALMACENES.BackColor = System.Drawing.Color.White
-        Me.SUBMNALMACENES.Image = Global.Bombonela.My.Resources.Resources.stock16
-        Me.SUBMNALMACENES.Name = "SUBMNALMACENES"
-        Me.SUBMNALMACENES.Size = New System.Drawing.Size(142, 22)
-        Me.SUBMNALMACENES.Text = "ALMACENES"
+        Me.smnalmacenes.BackColor = System.Drawing.Color.White
+        Me.smnalmacenes.Image = Global.Bombonela.My.Resources.Resources.stock16
+        Me.smnalmacenes.Name = "smnalmacenes"
+        Me.smnalmacenes.Size = New System.Drawing.Size(152, 22)
+        Me.smnalmacenes.Text = "ALMACENES"
         '
         'mnprospectos
         '
-        Me.mnprospectos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PROSPECTOSToolStripMenuItem, Me.CLIENTESToolStripMenuItem, Me.COLABORADORESToolStripMenuItem, Me.PUESTOSToolStripMenuItem})
+        Me.mnprospectos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smnprospectos, Me.smnclientes, Me.smncolaboradores, Me.smnpuestos})
         Me.mnprospectos.Image = Global.Bombonela.My.Resources.Resources.personas16
         Me.mnprospectos.Name = "mnprospectos"
         Me.mnprospectos.Size = New System.Drawing.Size(77, 35)
         Me.mnprospectos.Text = "PERSONAS"
         Me.mnprospectos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'PROSPECTOSToolStripMenuItem
+        'smnprospectos
         '
-        Me.PROSPECTOSToolStripMenuItem.Image = Global.Bombonela.My.Resources.Resources.pros16
-        Me.PROSPECTOSToolStripMenuItem.Name = "PROSPECTOSToolStripMenuItem"
-        Me.PROSPECTOSToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.PROSPECTOSToolStripMenuItem.Text = "PROSPECTOS"
+        Me.smnprospectos.Image = Global.Bombonela.My.Resources.Resources.pros16
+        Me.smnprospectos.Name = "smnprospectos"
+        Me.smnprospectos.Size = New System.Drawing.Size(172, 22)
+        Me.smnprospectos.Text = "PROSPECTOS"
         '
-        'CLIENTESToolStripMenuItem
+        'smnclientes
         '
-        Me.CLIENTESToolStripMenuItem.Image = Global.Bombonela.My.Resources.Resources.clie16
-        Me.CLIENTESToolStripMenuItem.Name = "CLIENTESToolStripMenuItem"
-        Me.CLIENTESToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.CLIENTESToolStripMenuItem.Text = "CLIENTES"
+        Me.smnclientes.Image = Global.Bombonela.My.Resources.Resources.clie16
+        Me.smnclientes.Name = "smnclientes"
+        Me.smnclientes.Size = New System.Drawing.Size(172, 22)
+        Me.smnclientes.Text = "CLIENTES"
         '
-        'COLABORADORESToolStripMenuItem
+        'smncolaboradores
         '
-        Me.COLABORADORESToolStripMenuItem.Image = Global.Bombonela.My.Resources.Resources.personal16
-        Me.COLABORADORESToolStripMenuItem.Name = "COLABORADORESToolStripMenuItem"
-        Me.COLABORADORESToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.COLABORADORESToolStripMenuItem.Text = "COLABORADORES"
+        Me.smncolaboradores.Image = Global.Bombonela.My.Resources.Resources.personal16
+        Me.smncolaboradores.Name = "smncolaboradores"
+        Me.smncolaboradores.Size = New System.Drawing.Size(172, 22)
+        Me.smncolaboradores.Text = "COLABORADORES"
         '
-        'PUESTOSToolStripMenuItem
+        'smnpuestos
         '
-        Me.PUESTOSToolStripMenuItem.Image = Global.Bombonela.My.Resources.Resources.puestos16
-        Me.PUESTOSToolStripMenuItem.Name = "PUESTOSToolStripMenuItem"
-        Me.PUESTOSToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
-        Me.PUESTOSToolStripMenuItem.Text = "PUESTOS"
+        Me.smnpuestos.Image = Global.Bombonela.My.Resources.Resources.puestos16
+        Me.smnpuestos.Name = "smnpuestos"
+        Me.smnpuestos.Size = New System.Drawing.Size(172, 22)
+        Me.smnpuestos.Text = "PUESTOS"
         '
         'mnccalendario
         '
@@ -198,6 +202,7 @@ Partial Class frmprincipal
         Me.mnccalendario.Size = New System.Drawing.Size(91, 35)
         Me.mnccalendario.Text = "CALENDARIO"
         Me.mnccalendario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.mnccalendario.Visible = False
         '
         'mnrecepcion
         '
@@ -206,6 +211,7 @@ Partial Class frmprincipal
         Me.mnrecepcion.Size = New System.Drawing.Size(82, 35)
         Me.mnrecepcion.Text = "RECEPCION"
         Me.mnrecepcion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.mnrecepcion.Visible = False
         '
         'mnsalida
         '
@@ -214,6 +220,7 @@ Partial Class frmprincipal
         Me.mnsalida.Size = New System.Drawing.Size(58, 35)
         Me.mnsalida.Text = "SALIDA"
         Me.mnsalida.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.mnsalida.Visible = False
         '
         'mnventas
         '
@@ -317,44 +324,45 @@ Partial Class frmprincipal
         Me.mnhistorial.Size = New System.Drawing.Size(75, 35)
         Me.mnhistorial.Text = "HISTORIAL"
         Me.mnhistorial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.mnhistorial.Visible = False
         '
-        'ToolStripMenuItem1
+        'mncaja
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnabrircaja, Me.mngastocaja, Me.mnretirocaja, Me.mnreportecaja})
-        Me.ToolStripMenuItem1.Image = Global.Bombonela.My.Resources.Resources.cashbox
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(48, 35)
-        Me.ToolStripMenuItem1.Text = "CAJA"
-        Me.ToolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.mncaja.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.smnabrircaja, Me.smngastocaja, Me.smnretirocaja, Me.smnreportecaja})
+        Me.mncaja.Image = Global.Bombonela.My.Resources.Resources.cashbox
+        Me.mncaja.Name = "mncaja"
+        Me.mncaja.Size = New System.Drawing.Size(48, 35)
+        Me.mncaja.Text = "CAJA"
+        Me.mncaja.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'mnabrircaja
+        'smnabrircaja
         '
-        Me.mnabrircaja.Image = Global.Bombonela.My.Resources.Resources.OPEN
-        Me.mnabrircaja.Name = "mnabrircaja"
-        Me.mnabrircaja.Size = New System.Drawing.Size(179, 22)
-        Me.mnabrircaja.Text = "APERTURA DE CAJA"
+        Me.smnabrircaja.Image = Global.Bombonela.My.Resources.Resources.OPEN
+        Me.smnabrircaja.Name = "smnabrircaja"
+        Me.smnabrircaja.Size = New System.Drawing.Size(179, 22)
+        Me.smnabrircaja.Text = "APERTURA DE CAJA"
         '
-        'mngastocaja
+        'smngastocaja
         '
-        Me.mngastocaja.BackColor = System.Drawing.Color.White
-        Me.mngastocaja.Image = Global.Bombonela.My.Resources.Resources.PAGOS
-        Me.mngastocaja.Name = "mngastocaja"
-        Me.mngastocaja.Size = New System.Drawing.Size(179, 22)
-        Me.mngastocaja.Text = "GASTOS CAJA"
+        Me.smngastocaja.BackColor = System.Drawing.Color.White
+        Me.smngastocaja.Image = Global.Bombonela.My.Resources.Resources.PAGOS
+        Me.smngastocaja.Name = "smngastocaja"
+        Me.smngastocaja.Size = New System.Drawing.Size(179, 22)
+        Me.smngastocaja.Text = "GASTOS CAJA"
         '
-        'mnretirocaja
+        'smnretirocaja
         '
-        Me.mnretirocaja.Image = Global.Bombonela.My.Resources.Resources.bank
-        Me.mnretirocaja.Name = "mnretirocaja"
-        Me.mnretirocaja.Size = New System.Drawing.Size(179, 22)
-        Me.mnretirocaja.Text = "RETIROS DE CAJA"
+        Me.smnretirocaja.Image = Global.Bombonela.My.Resources.Resources.bank
+        Me.smnretirocaja.Name = "smnretirocaja"
+        Me.smnretirocaja.Size = New System.Drawing.Size(179, 22)
+        Me.smnretirocaja.Text = "RETIROS DE CAJA"
         '
-        'mnreportecaja
+        'smnreportecaja
         '
-        Me.mnreportecaja.Image = Global.Bombonela.My.Resources.Resources.RPTCAJA
-        Me.mnreportecaja.Name = "mnreportecaja"
-        Me.mnreportecaja.Size = New System.Drawing.Size(179, 22)
-        Me.mnreportecaja.Text = "REPORTE DE CAJA"
+        Me.smnreportecaja.Image = Global.Bombonela.My.Resources.Resources.RPTCAJA
+        Me.smnreportecaja.Name = "smnreportecaja"
+        Me.smnreportecaja.Size = New System.Drawing.Size(179, 22)
+        Me.smnreportecaja.Text = "REPORTE DE CAJA"
         '
         'mntools
         '
@@ -401,13 +409,24 @@ Partial Class frmprincipal
         Me.submnegresos.Size = New System.Drawing.Size(152, 22)
         Me.submnegresos.Text = "EGRESOS"
         '
-        'ToolStripMenuItem2
+        'mnbodega
         '
-        Me.ToolStripMenuItem2.Image = Global.Bombonela.My.Resources.Resources.WAREHOUSE
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(65, 35)
-        Me.ToolStripMenuItem2.Text = "BODEGA"
-        Me.ToolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.mnbodega.Image = Global.Bombonela.My.Resources.Resources.WAREHOUSE
+        Me.mnbodega.Name = "mnbodega"
+        Me.mnbodega.Size = New System.Drawing.Size(65, 35)
+        Me.mnbodega.Text = "BODEGA"
+        Me.mnbodega.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.mnbodega.Visible = False
+        '
+        'mncambiar
+        '
+        Me.mncambiar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.mncambiar.Image = Global.Bombonela.My.Resources.Resources.switch
+        Me.mncambiar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mncambiar.Name = "mncambiar"
+        Me.mncambiar.Size = New System.Drawing.Size(71, 35)
+        Me.mncambiar.Text = "CAMBIAR"
+        Me.mncambiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'tconsulta
         '
@@ -475,6 +494,22 @@ Partial Class frmprincipal
         Me.grdatos.TabIndex = 17
         Me.grdatos.VirtualMode = True
         '
+        'barraestado
+        '
+        Me.barraestado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbarusuario})
+        Me.barraestado.Location = New System.Drawing.Point(207, 665)
+        Me.barraestado.Name = "barraestado"
+        Me.barraestado.Size = New System.Drawing.Size(1163, 22)
+        Me.barraestado.TabIndex = 8
+        Me.barraestado.Text = "StatusStrip1"
+        '
+        'lbarusuario
+        '
+        Me.lbarusuario.Image = Global.Bombonela.My.Resources.Resources.user64
+        Me.lbarusuario.Name = "lbarusuario"
+        Me.lbarusuario.Size = New System.Drawing.Size(79, 17)
+        Me.lbarusuario.Text = "barusuario"
+        '
         'frmprincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -483,10 +518,12 @@ Partial Class frmprincipal
         Me.BackgroundImage = Global.Bombonela.My.Resources.Resources.Bombonelamax
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1370, 687)
+        Me.Controls.Add(Me.barraestado)
         Me.Controls.Add(Me.pimpresion)
         Me.Controls.Add(Me.MenuStrip)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frmprincipal"
         Me.Text = "SISTEMA DE CONTROL DE ACTIVIDADES"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -494,6 +531,8 @@ Partial Class frmprincipal
         Me.MenuStrip.PerformLayout()
         Me.pimpresion.ResumeLayout(False)
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.barraestado.ResumeLayout(False)
+        Me.barraestado.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -507,24 +546,24 @@ Partial Class frmprincipal
     Friend WithEvents mnsalida As ToolStripMenuItem
     Friend WithEvents mninventario As ToolStripMenuItem
     Friend WithEvents mncatalogos As ToolStripMenuItem
-    Friend WithEvents MNCATPROD As ToolStripMenuItem
+    Friend WithEvents smnproductos As ToolStripMenuItem
     Friend WithEvents mncobranza As ToolStripMenuItem
     Friend WithEvents mncxc As ToolStripMenuItem
     Friend WithEvents mnreportes As ToolStripMenuItem
     Friend WithEvents mncingresos As ToolStripMenuItem
     Friend WithEvents mnventas As ToolStripMenuItem
     Friend WithEvents CONFIGURACIONESToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents SUBMNCABINAS As ToolStripMenuItem
-    Friend WithEvents SUBMNALMACENES As ToolStripMenuItem
-    Friend WithEvents SUBMNMARCA As ToolStripMenuItem
+    Friend WithEvents smnareas As ToolStripMenuItem
+    Friend WithEvents smnalmacenes As ToolStripMenuItem
+    Friend WithEvents smnmarca As ToolStripMenuItem
     Friend WithEvents mntools As ToolStripMenuItem
     Friend WithEvents SUBMNPRIINVENT As ToolStripMenuItem
-    Friend WithEvents MNCATSERV As ToolStripMenuItem
-    Friend WithEvents TIPOSToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PROSPECTOSToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CLIENTESToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents COLABORADORESToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PUESTOSToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents smnservicios As ToolStripMenuItem
+    Friend WithEvents smntipo As ToolStripMenuItem
+    Friend WithEvents smnprospectos As ToolStripMenuItem
+    Friend WithEvents smnclientes As ToolStripMenuItem
+    Friend WithEvents smncolaboradores As ToolStripMenuItem
+    Friend WithEvents smnpuestos As ToolStripMenuItem
     Friend WithEvents mngastos As ToolStripMenuItem
     Friend WithEvents submnpartida As ToolStripMenuItem
     Friend WithEvents submnproveedor As ToolStripMenuItem
@@ -536,12 +575,15 @@ Partial Class frmprincipal
     Friend WithEvents mncventadet As ToolStripMenuItem
     Friend WithEvents mncventadetpago As ToolStripMenuItem
     Friend WithEvents mnhistorial As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents mnabrircaja As ToolStripMenuItem
-    Friend WithEvents mngastocaja As ToolStripMenuItem
-    Friend WithEvents mnreportecaja As ToolStripMenuItem
-    Friend WithEvents mnretirocaja As ToolStripMenuItem
+    Friend WithEvents mncaja As ToolStripMenuItem
+    Friend WithEvents smnabrircaja As ToolStripMenuItem
+    Friend WithEvents smngastocaja As ToolStripMenuItem
+    Friend WithEvents smnreportecaja As ToolStripMenuItem
+    Friend WithEvents smnretirocaja As ToolStripMenuItem
     Friend WithEvents mnctickets As ToolStripMenuItem
     Friend WithEvents mnccumple As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
+    Friend WithEvents mnbodega As ToolStripMenuItem
+    Friend WithEvents barraestado As StatusStrip
+    Friend WithEvents lbarusuario As ToolStripStatusLabel
+    Friend WithEvents mncambiar As ToolStripMenuItem
 End Class

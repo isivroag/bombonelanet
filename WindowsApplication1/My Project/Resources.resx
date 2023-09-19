@@ -127,6 +127,9 @@
   <data name="OK32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\OK 32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="paleta32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paleta32.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="servicios32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\servicios32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,17 +151,14 @@
   <data name="MOV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MOV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="stock16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stock16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MONEY16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MONEY16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="subpartida16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subpartida16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undo_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,14 +190,17 @@
   <data name="detalle26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\detalle26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="puestos16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\puestos16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="WAREHOUSE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WAREHOUSE.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exit_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exit-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="list16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_new_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-new-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="personas16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\personas16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -213,9 +216,6 @@
   </data>
   <data name="subpartidamn16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\subpartidamn16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pros16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pros16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VERPAGOS26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VERPAGOS26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,6 +253,9 @@
   <data name="CREDIT16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CREDIT16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="list16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\list16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="VENTAS16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VENTAS16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -282,9 +285,6 @@
   </data>
   <data name="RPT16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RPT16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_new_26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add-new-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="trans24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trans24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,8 +316,8 @@
   <data name="calendaradd32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendaradd32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MONEY16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MONEY16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="minus26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -327,9 +327,6 @@
   </data>
   <data name="PAGOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PAGOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancelar26" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cancelar26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gastos16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gastos16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -349,6 +346,9 @@
   <data name="PAGO26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PAGO26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MOVIMIENTO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MOVIMIENTO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cashbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cashbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -361,11 +361,14 @@
   <data name="add_new_261" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-new-261.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="VER" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="salir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\salir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MOVIMIENTO" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MOVIMIENTO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="clie16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clie16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -373,20 +376,20 @@
   <data name="list2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cliente16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cliente16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="prospecto16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prospecto16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="woman32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\woman32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="puestos16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\puestos16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cancelar26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cancelar26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="brand16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\brand16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="paleta32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\paleta32.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pros16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pros16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendardel32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendardel32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -409,13 +412,13 @@
   <data name="ENTRADA16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ENTRADA16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="prospecto16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\prospecto16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cliente16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cliente16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VER.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\switch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

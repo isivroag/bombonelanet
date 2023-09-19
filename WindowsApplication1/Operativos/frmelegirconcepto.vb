@@ -1,8 +1,8 @@
 ﻿Public Class frmelegirconcepto
     Private Sub bproducto_Click(sender As Object, e As EventArgs) Handles bproducto.Click
-        frmcntaproducto.flag = 3
-        frmcntaproducto.Show()
-        frmcntaproducto.BringToFront()
+        cntaprodvta.flag = 3
+        cntaprodvta.Show()
+        cntaprodvta.BringToFront()
 
         Dispose()
     End Sub

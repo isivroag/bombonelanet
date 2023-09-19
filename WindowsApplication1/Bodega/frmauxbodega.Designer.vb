@@ -22,8 +22,11 @@ Partial Class frmauxbodega
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmauxbodega))
         Me.Label6 = New System.Windows.Forms.Label()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.bguardar = New System.Windows.Forms.ToolStripButton()
+        Me.bcancelar = New System.Windows.Forms.ToolStripButton()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -34,8 +37,6 @@ Partial Class frmauxbodega
         Me.tconcepto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tclave = New System.Windows.Forms.TextBox()
-        Me.bguardar = New System.Windows.Forms.ToolStripButton()
-        Me.bcancelar = New System.Windows.Forms.ToolStripButton()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.texistencia = New System.Windows.Forms.TextBox()
         Me.ToolStrip1.SuspendLayout()
@@ -64,6 +65,28 @@ Partial Class frmauxbodega
         Me.ToolStrip1.Size = New System.Drawing.Size(464, 48)
         Me.ToolStrip1.TabIndex = 43
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'bguardar
+        '
+        Me.bguardar.BackColor = System.Drawing.Color.White
+        Me.bguardar.Image = Global.Bombonela.My.Resources.Resources.OK26
+        Me.bguardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bguardar.Name = "bguardar"
+        Me.bguardar.Size = New System.Drawing.Size(60, 45)
+        Me.bguardar.Text = "ACEPTAR"
+        Me.bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'bcancelar
+        '
+        Me.bcancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.bcancelar.BackColor = System.Drawing.Color.White
+        Me.bcancelar.Image = Global.Bombonela.My.Resources.Resources.undo_26
+        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bcancelar.Name = "bcancelar"
+        Me.bcancelar.Size = New System.Drawing.Size(66, 45)
+        Me.bcancelar.Text = "REGRESAR"
+        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.bcancelar.ToolTipText = "REGRESAR"
         '
         'Label5
         '
@@ -107,10 +130,11 @@ Partial Class frmauxbodega
         '
         'ttotal
         '
-        Me.ttotal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.ttotal.BackColor = System.Drawing.Color.White
         Me.ttotal.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ttotal.Location = New System.Drawing.Point(318, 202)
         Me.ttotal.Name = "ttotal"
+        Me.ttotal.ReadOnly = True
         Me.ttotal.Size = New System.Drawing.Size(126, 22)
         Me.ttotal.TabIndex = 36
         Me.ttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -127,7 +151,7 @@ Partial Class frmauxbodega
         '
         'tpreciol
         '
-        Me.tpreciol.BackColor = System.Drawing.SystemColors.Window
+        Me.tpreciol.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.tpreciol.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tpreciol.Location = New System.Drawing.Point(16, 202)
         Me.tpreciol.Name = "tpreciol"
@@ -162,28 +186,6 @@ Partial Class frmauxbodega
         Me.tclave.Name = "tclave"
         Me.tclave.Size = New System.Drawing.Size(100, 22)
         Me.tclave.TabIndex = 32
-        '
-        'bguardar
-        '
-        Me.bguardar.BackColor = System.Drawing.Color.White
-        Me.bguardar.Image = Global.Bombonela.My.Resources.Resources.OK26
-        Me.bguardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bguardar.Name = "bguardar"
-        Me.bguardar.Size = New System.Drawing.Size(60, 45)
-        Me.bguardar.Text = "ACEPTAR"
-        Me.bguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'bcancelar
-        '
-        Me.bcancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.bcancelar.BackColor = System.Drawing.Color.White
-        Me.bcancelar.Image = Global.Bombonela.My.Resources.Resources.undo_26
-        Me.bcancelar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.bcancelar.Name = "bcancelar"
-        Me.bcancelar.Size = New System.Drawing.Size(66, 45)
-        Me.bcancelar.Text = "REGRESAR"
-        Me.bcancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.bcancelar.ToolTipText = "REGRESAR"
         '
         'Label7
         '
@@ -226,6 +228,7 @@ Partial Class frmauxbodega
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.tclave)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmauxbodega"
         Me.Text = "frmauxbodega"
         Me.ToolStrip1.ResumeLayout(False)

@@ -236,6 +236,16 @@ Public Class frmcntaproducto
             consultavendible()
         End If
         color = 0
+
+        If globalrol = 1 Then
+            For Each men As ToolStripButton In menuclientes.Items
+                If men.Name = "mncSALIR" Then
+                    men.Visible = True
+                Else
+                    men.Visible = False
+                End If
+            Next
+        End If
     End Sub
 
     Private Sub grdatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdatos.CellContentClick

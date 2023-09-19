@@ -20,5 +20,17 @@
     <Setting Name="sucursal" Type="System.String" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
+    <Setting Name="wserver" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tecniem.com</Value>
+    </Setting>
+    <Setting Name="wdb" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tecniemc_mbombonela</Value>
+    </Setting>
+    <Setting Name="wuser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">tecniemc_bombonela</Value>
+    </Setting>
+    <Setting Name="wpwd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2023.Bombonela.matriz</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

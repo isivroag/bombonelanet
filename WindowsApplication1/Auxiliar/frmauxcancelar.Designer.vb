@@ -22,6 +22,7 @@ Partial Class frmauxcancelar
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmauxcancelar))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.bguardar = New System.Windows.Forms.ToolStripButton()
         Me.bcancelar = New System.Windows.Forms.ToolStripButton()
@@ -107,6 +108,7 @@ Partial Class frmauxcancelar
         Me.Controls.Add(Me.tmotivo)
         Me.Controls.Add(Me.ToolStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmauxcancelar"
         Me.Text = "frmauxcancelar"
         Me.ToolStrip1.ResumeLayout(False)

@@ -34,12 +34,12 @@ Partial Class frmcntacuentasclie
         Me.mncdetalle = New System.Windows.Forms.ToolStripButton()
         Me.MNVER = New System.Windows.Forms.ToolStripButton()
         Me.mncancelar = New System.Windows.Forms.ToolStripButton()
-        Me.mncIMPRIMIR = New System.Windows.Forms.ToolStripButton()
         Me.mncSALIR = New System.Windows.Forms.ToolStripButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tnombre = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tid_clie = New System.Windows.Forms.TextBox()
+        Me.mncIMPRIMIR = New System.Windows.Forms.ToolStripButton()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuclientes.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,7 +111,7 @@ Partial Class frmcntacuentasclie
         '
         Me.menuclientes.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(219, Byte), Integer))
         Me.menuclientes.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.menuclientes.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncpagar, Me.mncdetalle, Me.MNVER, Me.mncancelar, Me.mncIMPRIMIR, Me.mncSALIR})
+        Me.menuclientes.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncpagar, Me.mncdetalle, Me.MNVER, Me.mncancelar, Me.mncSALIR, Me.mncIMPRIMIR})
         Me.menuclientes.Location = New System.Drawing.Point(0, 0)
         Me.menuclientes.Name = "menuclientes"
         Me.menuclientes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
@@ -163,15 +163,6 @@ Partial Class frmcntacuentasclie
         Me.mncancelar.Text = "CANCELAR"
         Me.mncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'mncIMPRIMIR
-        '
-        Me.mncIMPRIMIR.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mncIMPRIMIR.Name = "mncIMPRIMIR"
-        Me.mncIMPRIMIR.Size = New System.Drawing.Size(63, 45)
-        Me.mncIMPRIMIR.Text = "IMPRIMIR"
-        Me.mncIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.mncIMPRIMIR.Visible = False
-        '
         'mncSALIR
         '
         Me.mncSALIR.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
@@ -221,6 +212,17 @@ Partial Class frmcntacuentasclie
         Me.tid_clie.Size = New System.Drawing.Size(100, 22)
         Me.tid_clie.TabIndex = 159
         '
+        'mncIMPRIMIR
+        '
+        Me.mncIMPRIMIR.BackColor = System.Drawing.Color.White
+        Me.mncIMPRIMIR.Image = Global.Bombonela.My.Resources.Resources.PRINT26
+        Me.mncIMPRIMIR.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mncIMPRIMIR.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mncIMPRIMIR.Name = "mncIMPRIMIR"
+        Me.mncIMPRIMIR.Size = New System.Drawing.Size(63, 45)
+        Me.mncIMPRIMIR.Text = "IMPRIMIR"
+        Me.mncIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'frmcntacuentasclie
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -252,11 +254,11 @@ Partial Class frmcntacuentasclie
     Friend WithEvents mncpagar As ToolStripButton
     Friend WithEvents mncdetalle As ToolStripButton
     Friend WithEvents MNVER As ToolStripButton
-    Friend WithEvents mncIMPRIMIR As ToolStripButton
     Friend WithEvents mncSALIR As ToolStripButton
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents tnombre As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents tid_clie As TextBox
     Friend WithEvents mncancelar As ToolStripButton
+    Friend WithEvents mncIMPRIMIR As ToolStripButton
 End Class

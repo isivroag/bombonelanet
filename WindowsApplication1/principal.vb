@@ -1,8 +1,23 @@
 ﻿Imports System.IO
 Imports System.Math
 Imports Microsoft.Office.Interop
+Imports System.Net.NetworkInformation
+
+
 Module principal
     Public globalusuario As String
+    Public globalrol As Int32
+    Public globalnrol As String
+
+    Public Function revisarinternet() As Boolean
+        Try
+            Dim ping As New Ping()
+            Dim result As PingReply = ping.Send("www.google.com")
+            Return (result.Status = IPStatus.Success)
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
     Public Function sacarclave(texto As String) As String
         Dim i As Integer
         Dim p As Integer
@@ -338,6 +353,16 @@ Module principal
         forma.Text = "BOMBONELA: " & texto
         forma.MaximizeBox = False
         forma.MinimizeBox = False
+
+        forma.FormBorderStyle = FormBorderStyle.FixedSingle
+    End Sub
+
+    Public Sub inicialm(ByVal sender As Object, ByVal e As EventArgs, ByVal texto As String)
+
+        Dim forma As Form = TryCast(sender, Form)
+        forma.Text = "BOMBONELA: " & texto
+        'forma.MaximizeBox = False
+        'forma.MinimizeBox = False
 
         forma.FormBorderStyle = FormBorderStyle.FixedSingle
     End Sub

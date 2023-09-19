@@ -3,6 +3,7 @@
 Public Class frmcancelar
     Dim conn As c_mysqlconn
     Dim tabla As DataTable
+    Public username As String
     Public Sub combo()
         Dim sql As String
 
@@ -84,7 +85,7 @@ Public Class frmcancelar
 
                         'cancelar la venta
                         conn = New c_mysqlconn
-                        If conn.cancelar(tfolio.Text, sacarclave(ttipo.Text), tfecha.Value, ccol.Text, globalusuario, tmotivo.Text) Then
+                        If conn.cancelar(tfolio.Text, sacarclave(ttipo.Text), tfecha.Value, ccol.Text, username, tmotivo.Text) Then
                             MsgBox("VENTA CANCELADA", vbInformation + vbOKOnly, "CANCELACION")
                             frmcntacuentasclie.consulta()
                             Dispose()
@@ -104,7 +105,7 @@ Public Class frmcancelar
                         If conn.aumentarsaldo(foliocxc, monto) Then
 
                             conn = New c_mysqlconn
-                            If conn.cancelar(tfolio.Text, sacarclave(ttipo.Text), tfecha.Value, ccol.Text, globalusuario, tmotivo.Text) Then
+                            If conn.cancelar(tfolio.Text, sacarclave(ttipo.Text), tfecha.Value, ccol.Text, username, tmotivo.Text) Then
                                 MsgBox("PAGO CANCELADO", vbInformation + vbOKOnly, "CANCELACION")
                                 frmverpagos.consulta()
                                 frmcntacuentasclie.consulta()
@@ -126,5 +127,9 @@ Public Class frmcancelar
     Private Sub frmcancelar_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         inicial(sender, e, "CANCELACION")
         combo()
+    End Sub
+
+    Private Sub ltitulo_Click(sender As Object, e As EventArgs) Handles ltitulo.Click
+
     End Sub
 End Class

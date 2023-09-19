@@ -2,6 +2,41 @@
 Public Class frmreporte5
     Public folio As String
 
+    Public Sub ticket1()
+        Dim sql As String
+        Dim conn As New c_mysqlconn
+        Dim tabla As New DataTable
+        Dim REPORTE As New Rticket5
+
+        sql = " SELECT vticket1.folio_cxc, vticket1.concepto, vticket1.cantidad, vticket1.precio," &
+        "vticket1.subtotal, vticket1.folio_pago, vticket1.nom_clie, vticket1.fecha_pago, vticket1.importe_pago," &
+        "vticket1.nom_metodo, vticket1.dinero_pago, vticket1.cambio_pago, vticket1.saldoini_cxc, vticket1.saldofin_cxc, vticket1.letra_pago, vticket1.nom_col " &
+        "FROM vticket vticket1 " &
+        "WHERE vticket1.folio_pago='" & folio & "'" &
+        "ORDER BY vticket1.folio_pago"
+
+
+
+
+
+
+
+
+
+        'sql = "Select  vpago1.folio_pago, vpago1.folio_cxc, vpago1.id_clie, vpago1.nom_clie, vpago1.fecha_pago, vpago1.importe_pago, vpago1.nom_metodo, vpago1.dinero_pago, vpago1.cambio_pago, vpago1.saldoini_cxc, vpago1.saldofin_cxc, vpago1.letra_pago, vpago1.nom_col From vpago vpago1 where vpago1.folio_pago='" & folio & "'"
+
+        tabla = conn.consulta(sql)
+        If tabla.Rows.Count > 0 Then
+            ReportViewer.ReportSource = REPORTE
+            REPORTE.SetDataSource(tabla)
+
+
+            'ReportViewer.Refresh()
+        Else
+            MsgBox("NO EXISTE REGISTROS EN EL CORTE", vbInformation + vbOKOnly, "CORTE DE CAJA")
+
+        End If
+    End Sub
     Public Sub CAJA()
         Dim sql As String
         Dim conn As New c_mysqlconn

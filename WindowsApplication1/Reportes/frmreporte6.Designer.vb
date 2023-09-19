@@ -43,7 +43,7 @@ Partial Class frmreporte6
         Me.ReportViewer.ShowPageNavigateButtons = False
         Me.ReportViewer.ShowParameterPanelButton = False
         Me.ReportViewer.ShowTextSearchButton = False
-        Me.ReportViewer.Size = New System.Drawing.Size(398, 523)
+        Me.ReportViewer.Size = New System.Drawing.Size(397, 601)
         Me.ReportViewer.TabIndex = 4
         Me.ReportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -51,7 +51,7 @@ Partial Class frmreporte6
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(398, 523)
+        Me.ClientSize = New System.Drawing.Size(397, 601)
         Me.Controls.Add(Me.ReportViewer)
         Me.Name = "frmreporte6"
         Me.Text = "frmreporte6"

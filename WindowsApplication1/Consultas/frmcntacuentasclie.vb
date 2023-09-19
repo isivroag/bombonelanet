@@ -121,16 +121,24 @@ Public Class frmcntacuentasclie
             saldo = grdatos.CurrentRow.Cells(5).Value
 
             If saldo = total Then
-                frmcancelar.Show()
-                frmcancelar.tfolio.Text = folio
-                frmcancelar.ttipo.Text = "1 VENTA"
-                frmcancelar.tfecha.Value = Now
-                frmcancelar.ltitulo.Text = "CANCELAR VENTA"
+
+                frmlogincancel.Show()
+                frmlogincancel.folio = folio
+                frmlogincancel.tipo = 1
+                'frmcancelar.Show()
+                'frmcancelar.tfolio.Text = folio
+                'frmcancelar.ttipo.Text = "1 VENTA"
+                'frmcancelar.tfecha.Value = Now
+                'frmcancelar.ltitulo.Text = "CANCELAR VENTA"
 
             Else
                 MsgBox("El Registro ya tiene operaciones, es necesario cancelar los pagos antes de cancelar la venta", vbExclamation + vbOKOnly, "CANCELACION")
             End If
 
         End If
+    End Sub
+
+    Private Sub mncIMPRIMIR_Click(sender As Object, e As EventArgs) Handles mncIMPRIMIR.Click
+        ExportarDatosExcel2(grdatos, "CONSULTA DE CUENTAS")
     End Sub
 End Class

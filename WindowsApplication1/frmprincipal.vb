@@ -1,10 +1,74 @@
 ﻿Imports System.ComponentModel
+Imports System.Windows.Forms
 Imports MySql.Data.MySqlClient
 
 
 Public Class frmprincipal
     Dim conn As c_mysqlconn
     Dim tabla As DataTable
+    Public username As String
+    Public rol As Int32
+    Public nrol As String
+    Public Sub permisos()
+
+        Select Case rol
+            Case 1
+                For Each men As ToolStripMenuItem In MenuStrip.Items
+                    If men.Name = "mncalendario" Or men.Name = "mnrecepcion" Or men.Name = "mnsalida" Or men.Name = "mnhistorial" Or men.Name = "mntools" Then
+                        men.Visible = False
+                    Else
+                        men.Visible = True
+                    End If
+
+                Next
+
+                For Each men As ToolStripMenuItem In mncatalogos.DropDownItems
+                    If men.Name = "smnmarca" Or men.Name = "smntipo" Then
+                        men.Visible = False
+                    Else
+                        men.Visible = True
+                    End If
+                Next
+
+                For Each men As ToolStripMenuItem In mncaja.DropDownItems
+                    If men.Name = "smnretirocaja" Then
+                        men.Visible = False
+                    Else
+                        men.Visible = True
+                    End If
+                Next
+
+
+            Case 2
+                For Each men As ToolStripMenuItem In MenuStrip.Items
+                    If men.Name = "mncalendario" Or men.Name = "mnrecepcion" Or men.Name = "mnsalida" Or men.Name = "mnhistorial" Or men.Name = "mntools" Then
+                        men.Visible = False
+                    Else
+                        men.Visible = True
+                    End If
+
+                Next
+
+            Case 3
+                For Each men As ToolStripMenuItem In MenuStrip.Items
+                    If men.Name = "mncalendario" Or men.Name = "mnrecepcion" Or men.Name = "mnsalida" Or men.Name = "mnhistorial" Or men.Name = "mntools" Then
+                        men.Visible = False
+                    Else
+                        men.Visible = True
+                    End If
+                Next
+
+
+
+        End Select
+
+
+
+    End Sub
+
+    Public Sub barra()
+        lbarusuario.Text = username & " ( " & nrol & " )"
+    End Sub
     Private Sub mnsalir_Click(sender As Object, e As EventArgs) Handles mnsalir.Click
         Dim Msg As MsgBoxResult
         Msg = MsgBox("¿DESEA SALIR DEL SISTEMA?", vbQuestion + vbYesNo, "SALIR")
@@ -102,16 +166,26 @@ Public Class frmprincipal
 
 
 
-    Private Sub MNCATSERV_Click(sender As Object, e As EventArgs) Handles MNCATSERV.Click
+    Private Sub MNCATSERV_Click(sender As Object, e As EventArgs) Handles smnservicios.Click
         frmcntaservicios.Show()
         frmcntaservicios.BringToFront()
         frmcntaservicios.flag = 1
     End Sub
 
-    Private Sub MNCATPROD_Click(sender As Object, e As EventArgs) Handles MNCATPROD.Click
-        frmcntaproducto.Show()
-        frmcntaproducto.BringToFront()
-        frmcntaproducto.flag = 1
+    Private Sub MNCATPROD_Click(sender As Object, e As EventArgs) Handles smnproductos.Click
+        If rol = 2 Or rol = 3 Then
+            frmcntaproducto.Show()
+            frmcntaproducto.BringToFront()
+            frmcntaproducto.flag = 1
+        Else
+            Dim form2 As New frmcntaproducto()
+
+            ' Recorre todos los controles del formulario y oculta los botones
+
+
+            ' Muestra el formulario modalmemte (bloquea la interacción con otros formularios)
+            form2.ShowDialog()
+        End If
     End Sub
 
     Private Sub mncobranza_Click(sender As Object, e As EventArgs) Handles mncobranza.Click
@@ -146,19 +220,19 @@ Public Class frmprincipal
 
     End Sub
 
-    Private Sub SUBMNCABINAS_Click(sender As Object, e As EventArgs) Handles SUBMNCABINAS.Click
+    Private Sub SUBMNCABINAS_Click(sender As Object, e As EventArgs) Handles smnareas.Click
         frmcntacabina.Show()
         frmcntacabina.BringToFront()
         frmcntacabina.flag = 1
     End Sub
 
-    Private Sub SUBMNALMACENES_Click(sender As Object, e As EventArgs) Handles SUBMNALMACENES.Click
+    Private Sub SUBMNALMACENES_Click(sender As Object, e As EventArgs) Handles smnalmacenes.Click
         frmcntaalmacenes.Show()
         frmcntaalmacenes.BringToFront()
         frmcntaalmacenes.flag = 1
     End Sub
 
-    Private Sub SUBMNMARCA_Click(sender As Object, e As EventArgs) Handles SUBMNMARCA.Click
+    Private Sub SUBMNMARCA_Click(sender As Object, e As EventArgs) Handles smnmarca.Click
         frmcntamarca.Show()
         frmcntamarca.BringToFront()
         frmcntamarca.flag = 1
@@ -171,35 +245,35 @@ Public Class frmprincipal
     End Sub
 
     Private Sub frmprincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        inicial(sender, e, "SISTEMA DE CONTROL DE OPERACIONES")
+        inicialm(sender, e, "SISTEMA DE CONTROL DE OPERACIONES")
         consulta()
     End Sub
 
-    Private Sub TIPOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TIPOSToolStripMenuItem.Click
+    Private Sub TIPOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles smntipo.Click
         frmcntatipos.Show()
         frmcntatipos.BringToFront()
         frmcntatipos.flag = 1
     End Sub
 
-    Private Sub PROSPECTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PROSPECTOSToolStripMenuItem.Click
+    Private Sub PROSPECTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles smnprospectos.Click
         frmcntaprospectos.Show()
         frmcntaprospectos.flag = 1
         frmcntaprospectos.BringToFront()
     End Sub
 
-    Private Sub CLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CLIENTESToolStripMenuItem.Click
+    Private Sub CLIENTESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles smnclientes.Click
         frmcntawcliente.Show()
         frmcntawcliente.flag = 1
         frmcntawcliente.BringToFront()
     End Sub
 
-    Private Sub COLABORADORESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles COLABORADORESToolStripMenuItem.Click
+    Private Sub COLABORADORESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles smncolaboradores.Click
         frmcntacolaborador.Show()
         frmcntacolaborador.flag = 1
         frmcntapuesto.BringToFront()
     End Sub
 
-    Private Sub PUESTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PUESTOSToolStripMenuItem.Click
+    Private Sub PUESTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles smnpuestos.Click
         frmcntapuesto.Show()
         frmcntapuesto.flag = 1
         frmcntapuesto.BringToFront()
@@ -257,35 +331,35 @@ Public Class frmprincipal
         Dim sucursal As String
         sucursal = My.Settings.sucursal
         Select Case (sucursal)
-            Case 1
+            Case 1, 8
                 Dim x As New frmreporte
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
-            Case 2
+            Case 2, 9
                 Dim x As New frmreporte2
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 3
                 Dim x As New frmreporte3
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 4
                 Dim x As New frmreporte4
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 5
                 Dim x As New frmreporte5
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 6
                 Dim x As New frmreporte6
                 x.folio = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case Else
                 Dim x As New frmreporte
@@ -313,24 +387,24 @@ Public Class frmprincipal
         frmcntavtadetpago.BringToFront()
     End Sub
 
-    Private Sub mnabrircaja_Click(sender As Object, e As EventArgs) Handles mnabrircaja.Click
+    Private Sub mnabrircaja_Click(sender As Object, e As EventArgs) Handles smnabrircaja.Click
         frmabrircaja.Show()
         frmabrircaja.BringToFront()
 
     End Sub
 
-    Private Sub mngastocaja_Click(sender As Object, e As EventArgs) Handles mngastocaja.Click
+    Private Sub mngastocaja_Click(sender As Object, e As EventArgs) Handles smngastocaja.Click
         frmcntagasto.Show()
         frmcntagasto.BringToFront()
     End Sub
 
-    Private Sub mnreportecaja_Click(sender As Object, e As EventArgs) Handles mnreportecaja.Click
+    Private Sub mnreportecaja_Click(sender As Object, e As EventArgs) Handles smnreportecaja.Click
         frmrptcaja.Show()
         frmrptcaja.BringToFront()
 
     End Sub
 
-    Private Sub mnretirocaja_Click(sender As Object, e As EventArgs) Handles mnretirocaja.Click
+    Private Sub mnretirocaja_Click(sender As Object, e As EventArgs) Handles smnretirocaja.Click
         frmcntaretiros.Show()
         frmcntaretiros.BringToFront()
     End Sub
@@ -347,9 +421,15 @@ Public Class frmprincipal
 
     End Sub
 
-    Private Sub ToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem2.Click
+    Private Sub Tnmbodega_Click(sender As Object, e As EventArgs) Handles mnbodega.Click
         frmcntamovbodega.Show()
         frmcntamovbodega.BringToFront()
+
+    End Sub
+
+    Private Sub mncambiar_Click(sender As Object, e As EventArgs) Handles mncambiar.Click
+        frmlogin.Show()
+        Dispose()
 
     End Sub
 End Class

@@ -3,6 +3,7 @@ Public Class frmauxcobranza
     Dim paquete As c_paquete
     Dim producto As c_producto
     Dim tipo As Integer
+    Dim existencias As Double
     Public Sub bproducto(ByVal datos As c_producto)
         producto = New c_producto
         producto = datos
@@ -10,6 +11,7 @@ Public Class frmauxcobranza
         tconcepto.Text = producto.Nom_prod
         tcantidad.Text = 1
         tpreciol.Text = producto.Precio_prod
+        existencias = producto.Cant_prod
         tsesiones.Text = 0
         tsesiones.Visible = False
         lsesiones.Visible = False
@@ -106,7 +108,16 @@ Public Class frmauxcobranza
             Case 1
                 frmcobranza.agregar(paquete, tcantidad.Text, tprecio.Text)
             Case 2
-                frmcobranza.agregarp(producto, tcantidad.Text, tprecio.Text)
+                If (existencias >= tcantidad.Text) Then
+                    frmcobranza.agregarp(producto, tcantidad.Text, tprecio.Text)
+                Else
+                    MsgBox("NO ES POSIBLE VENDER MAS PRODUCTO DEL QUE SE ENCUENTRA EN INVENTARIO" & Chr(13) & "VERIFIQUE SU INFORMACIÓN", vbExclamation + vbOKOnly, "OPERACION NO PERMITIDA")
+                    Exit Sub
+                End If
+
+
+
+
         End Select
 
         Dispose()
@@ -168,4 +179,6 @@ Public Class frmauxcobranza
 
 
     End Sub
+
+
 End Class

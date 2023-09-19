@@ -59,35 +59,37 @@ Public Class frmverpagos
         Dim sucursal As String
         sucursal = My.Settings.sucursal
         Select Case (sucursal)
-            Case 1
+            'XALAPA Y ESTETICA XALAPA
+            Case 1, 8
                 Dim x As New frmreporte
                 x.folio = foliopago
                 x.ticket1()
                 x.ShowDialog()
-            Case 2
+                'COLON Y ESTETICA COLON
+            Case 2, 9
                 Dim x As New frmreporte2
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 3
                 Dim x As New frmreporte3
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 4
                 Dim x As New frmreporte4
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 5
                 Dim x As New frmreporte5
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 6
                 Dim x As New frmreporte6
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case Else
                 Dim x As New frmreporte
@@ -142,12 +144,15 @@ Public Class frmverpagos
             Dim folio As String
             folio = grdetalle.CurrentRow.Cells(0).Value
 
+            frmlogincancel.Show()
+            frmlogincancel.folio = folio
+            frmlogincancel.tipo = 2
 
-            frmcancelar.Show()
-            frmcancelar.tfolio.Text = folio
-            frmcancelar.ttipo.Text = "2 PAGO"
-            frmcancelar.tfecha.Value = Now
-            frmcancelar.ltitulo.Text = "CANCELAR PAGO"
+            'frmcancelar.Show()
+            'frmcancelar.tfolio.Text = folio
+            'frmcancelar.ttipo.Text = "2 PAGO"
+            'frmcancelar.tfecha.Value = Now
+            'frmcancelar.ltitulo.Text = "CANCELAR PAGO"
 
 
 

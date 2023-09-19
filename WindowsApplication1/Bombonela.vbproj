@@ -141,6 +141,12 @@
     <Compile Include="Auxiliar\frmauxcancelar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Auxiliar\frmlogincancel.Designer.vb">
+      <DependentUpon>frmlogincancel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Auxiliar\frmlogincancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Bodega\frmauxbodega.Designer.vb">
       <DependentUpon>frmauxbodega.vb</DependentUpon>
     </Compile>
@@ -255,6 +261,12 @@
     <Compile Include="caja\cntaretiros.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consultas\cntaprodvta.Designer.vb">
+      <DependentUpon>cntaprodvta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cntaprodvta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Consultas\frmcntacorte.Designer.vb">
       <DependentUpon>frmcntacorte.vb</DependentUpon>
     </Compile>
@@ -343,6 +355,7 @@
     <Compile Include="Clases\c_servicio.vb" />
     <Compile Include="Clases\c_tipo.vb" />
     <Compile Include="Clases\c_visita.vb" />
+    <Compile Include="c_remoto.vb" />
     <Compile Include="ExtendedMethods.vb" />
     <Compile Include="Consultas\frmcntacuentasclie.Designer.vb">
       <DependentUpon>frmcntacuentasclie.vb</DependentUpon>
@@ -691,6 +704,12 @@
     <Compile Include="Reportes\frmreporte6.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frmreportebodega.Designer.vb">
+      <DependentUpon>frmreportebodega.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmreportebodega.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\frmreportecaja.Designer.vb">
       <DependentUpon>frmreportecaja.vb</DependentUpon>
     </Compile>
@@ -702,6 +721,12 @@
     </Compile>
     <Compile Include="Reportes\frmreporteretiro.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptbodega.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptbodega.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\RptCaja.vb">
       <AutoGen>True</AutoGen>
@@ -729,6 +754,36 @@
     </Compile>
     <Compile Include="Reportes\RptTicket4.vb">
       <DependentUpon>RptTicket4.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Rticket4.vb">
+      <DependentUpon>Rticket4.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Rticket3.vb">
+      <DependentUpon>Rticket3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Rticket6.vb">
+      <DependentUpon>Rticket6.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Rticket5.vb">
+      <DependentUpon>Rticket5.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reportes\Rticket2.vb">
+      <DependentUpon>Rticket2.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -777,6 +832,9 @@
     <EmbeddedResource Include="Auxiliar\frmauxcancelar.resx">
       <DependentUpon>frmauxcancelar.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Auxiliar\frmlogincancel.resx">
+      <DependentUpon>frmlogincancel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bodega\frmauxbodega.resx">
       <DependentUpon>frmauxbodega.vb</DependentUpon>
     </EmbeddedResource>
@@ -821,6 +879,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos\frmwcliente.resx">
       <DependentUpon>frmwcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cntaprodvta.resx">
+      <DependentUpon>cntaprodvta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcntacorte.resx">
       <DependentUpon>frmcntacorte.vb</DependentUpon>
@@ -1033,11 +1094,18 @@
     <EmbeddedResource Include="Reportes\frmreporte6.resx">
       <DependentUpon>frmreporte6.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmreportebodega.resx">
+      <DependentUpon>frmreportebodega.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreportecaja.resx">
       <DependentUpon>frmreportecaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmreporteretiro.resx">
       <DependentUpon>frmreporteretiro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptbodega.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptbodega.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RptCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1058,6 +1126,26 @@
     <EmbeddedResource Include="Reportes\RptTicket4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptTicket4.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rticket4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rticket4.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rticket3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rticket3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rticket6.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rticket6.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rticket5.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rticket5.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rticket2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rticket2.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rticket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1165,6 +1253,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bombonelafondo.ico" />
+    <None Include="Resources\switch.png" />
     <None Include="Resources\VER.png" />
     <None Include="Resources\WAREHOUSE.png" />
     <None Include="Resources\CUMPLE.png" />

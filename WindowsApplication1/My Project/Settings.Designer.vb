@@ -125,6 +125,54 @@ Namespace My
                 Me("sucursal") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("tecniem.com")>  _
+        Public Property wserver() As String
+            Get
+                Return CType(Me("wserver"),String)
+            End Get
+            Set
+                Me("wserver") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("tecniemc_mbombonela")>  _
+        Public Property wdb() As String
+            Get
+                Return CType(Me("wdb"),String)
+            End Get
+            Set
+                Me("wdb") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("tecniemc_bombonela")>  _
+        Public Property wuser() As String
+            Get
+                Return CType(Me("wuser"),String)
+            End Get
+            Set
+                Me("wuser") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2023.Bombonela.matriz")>  _
+        Public Property wpwd() As String
+            Get
+                Return CType(Me("wpwd"),String)
+            End Get
+            Set
+                Me("wpwd") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

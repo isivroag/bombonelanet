@@ -40,6 +40,8 @@ Public Class frmauxinventario
     End Sub
 
     Private Sub bguardar_Click(sender As Object, e As EventArgs) Handles bguardar.Click
+
+        'REVISAR CUANDO EXISTE UN MOVIMIENTO DE INVENTARIO INICIAL POR QUE SE SOBREESCRIBE LA CANTIDAD GENERAL
         movimiento.Id_producto = datos.Id_prod
         movimiento.Fecha_mov = Date.Today.Date.ToString
         movimiento.Tipo_mov = sacarclave(ctipo.Text)

@@ -310,7 +310,7 @@ Public Class frmcobranza
         cuenta.Nom_col = contenido(ccol.Text)
         cuenta.Concepto_cxc = tconcepto.Text
         cuenta.Subtotal_cxc = CDbl(tsubtotal.Text)
-        cuenta.Descuento_cxc = CDbl(tdescuento.Text)
+        cuenta.Descuento_cxc = CDbl(ttotal.Text) - CDbl(tsubtotal.Text)
         saldo = cuenta.Saldo_cxc
         conn = New c_mysqlconn
 

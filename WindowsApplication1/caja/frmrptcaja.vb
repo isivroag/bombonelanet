@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class frmrptcaja
     Dim conn As c_mysqlconn
+    Dim remoto As c_remoto
     Dim tabla As DataTable
     Public fecha As DateTime
     Public sql As String
@@ -302,6 +303,12 @@ Public Class frmrptcaja
             If (MsgBox("YA EXISTEN DATOS PARA ESTE DIA" + Environment.NewLine + "¿DESEA MODIFICARLOS?", vbQuestion + vbYesNo, "REPORTE DE CAJA") = vbYes) Then
                 If conn.actualizarcaja(caja) Then
                     MsgBox("CAJA ACTUALIZADA", vbInformation + vbOKOnly, "REPORTE DE CAJA")
+                    'REMOTO
+                    If (revisarinternet()) Then
+                        remoto = New c_remoto
+                        remoto.actualizarcaja(caja, My.Settings.sucursal)
+                    End If
+
                 Else
                     MsgBox("CAJA NO ACTUALIZADA", vbCritical + vbOKOnly, "REPORTE DE CAJA")
                 End If
@@ -311,6 +318,11 @@ Public Class frmrptcaja
 
             If conn.insertarnuevo(caja) Then
                 MsgBox("CAJA REGISTRADA", vbInformation + vbOKOnly, "REPORTE DE CAJA")
+                'REMOTO
+                If (revisarinternet()) Then
+                    remoto = New c_remoto
+                    remoto.actualizarcaja(caja, My.Settings.sucursal)
+                End If
             Else
                 MsgBox("CAJA NO REGISTRADO", vbCritical + vbOKOnly, "REPORTE DE CAJA")
             End If

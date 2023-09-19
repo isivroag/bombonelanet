@@ -28,18 +28,19 @@ Partial Class frmcntamovbodega
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmcntamovbodega))
         Me.menuclientes = New System.Windows.Forms.ToolStrip()
+        Me.mncNUEVO = New System.Windows.Forms.ToolStripButton()
+        Me.mncEDITAR = New System.Windows.Forms.ToolStripButton()
+        Me.mncSALIR = New System.Windows.Forms.ToolStripButton()
+        Me.mncELIMINAR = New System.Windows.Forms.ToolStripButton()
+        Me.mncIMPRIMIR = New System.Windows.Forms.ToolStripButton()
         Me.grdetalle = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DtFin = New System.Windows.Forms.DateTimePicker()
         Me.DtInicio = New System.Windows.Forms.DateTimePicker()
-        Me.mncNUEVO = New System.Windows.Forms.ToolStripButton()
-        Me.mncEDITAR = New System.Windows.Forms.ToolStripButton()
-        Me.mncSALIR = New System.Windows.Forms.ToolStripButton()
-        Me.mncELIMINAR = New System.Windows.Forms.ToolStripButton()
-        Me.mncIMPRIMIR = New System.Windows.Forms.ToolStripButton()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.chcancelados = New System.Windows.Forms.CheckBox()
         Me.menuclientes.SuspendLayout()
         CType(Me.grdetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,112 +54,9 @@ Partial Class frmcntamovbodega
         Me.menuclientes.Location = New System.Drawing.Point(0, 0)
         Me.menuclientes.Name = "menuclientes"
         Me.menuclientes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.menuclientes.Size = New System.Drawing.Size(734, 48)
+        Me.menuclientes.Size = New System.Drawing.Size(774, 48)
         Me.menuclientes.TabIndex = 195
         Me.menuclientes.Text = "ToolStrip1"
-        '
-        'grdetalle
-        '
-        Me.grdetalle.AllowUserToAddRows = False
-        Me.grdetalle.AllowUserToDeleteRows = False
-        Me.grdetalle.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.grdetalle.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.grdetalle.BackgroundColor = System.Drawing.Color.White
-        Me.grdetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.grdetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle3
-        Me.grdetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.grdetalle.EnableHeadersVisualStyles = False
-        Me.grdetalle.GridColor = System.Drawing.Color.White
-        Me.grdetalle.Location = New System.Drawing.Point(19, 133)
-        Me.grdetalle.MultiSelect = False
-        Me.grdetalle.Name = "grdetalle"
-        Me.grdetalle.ReadOnly = True
-        Me.grdetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.grdetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdetalle.Size = New System.Drawing.Size(696, 385)
-        Me.grdetalle.TabIndex = 196
-        Me.grdetalle.VirtualMode = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Black
-        Me.Label3.Location = New System.Drawing.Point(180, 106)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 15)
-        Me.Label3.TabIndex = 193
-        Me.Label3.Text = "DESDE:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(111, 51)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(513, 43)
-        Me.Label1.TabIndex = 192
-        Me.Label1.Text = "CONSULTA DE MOVIMIENTOS BODEGA"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.Label1.UseCompatibleTextRendering = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(347, 106)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(48, 15)
-        Me.Label2.TabIndex = 191
-        Me.Label2.Text = "HASTA:"
-        '
-        'DtFin
-        '
-        Me.DtFin.CustomFormat = "yyyy-MM-dd"
-        Me.DtFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtFin.Location = New System.Drawing.Point(401, 106)
-        Me.DtFin.Name = "DtFin"
-        Me.DtFin.Size = New System.Drawing.Size(107, 20)
-        Me.DtFin.TabIndex = 190
-        '
-        'DtInicio
-        '
-        Me.DtInicio.CustomFormat = "yyyy-MM-dd"
-        Me.DtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DtInicio.Location = New System.Drawing.Point(234, 106)
-        Me.DtInicio.Name = "DtInicio"
-        Me.DtInicio.Size = New System.Drawing.Size(107, 20)
-        Me.DtInicio.TabIndex = 189
         '
         'mncNUEVO
         '
@@ -212,23 +110,137 @@ Partial Class frmcntamovbodega
         Me.mncIMPRIMIR.Text = "IMPRIMIR"
         Me.mncIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'grdetalle
+        '
+        Me.grdetalle.AllowUserToAddRows = False
+        Me.grdetalle.AllowUserToDeleteRows = False
+        Me.grdetalle.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.grdetalle.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.grdetalle.BackgroundColor = System.Drawing.Color.White
+        Me.grdetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.grdetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.grdetalle.DefaultCellStyle = DataGridViewCellStyle3
+        Me.grdetalle.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
+        Me.grdetalle.EnableHeadersVisualStyles = False
+        Me.grdetalle.GridColor = System.Drawing.Color.White
+        Me.grdetalle.Location = New System.Drawing.Point(19, 133)
+        Me.grdetalle.MultiSelect = False
+        Me.grdetalle.Name = "grdetalle"
+        Me.grdetalle.ReadOnly = True
+        Me.grdetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.grdetalle.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        Me.grdetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.grdetalle.Size = New System.Drawing.Size(743, 385)
+        Me.grdetalle.TabIndex = 196
+        Me.grdetalle.VirtualMode = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(92, 107)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 15)
+        Me.Label3.TabIndex = 193
+        Me.Label3.Text = "DESDE:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.Label1.Location = New System.Drawing.Point(131, 51)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(513, 43)
+        Me.Label1.TabIndex = 192
+        Me.Label1.Text = "CONSULTA DE MOVIMIENTOS BODEGA"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label1.UseCompatibleTextRendering = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(259, 107)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(48, 15)
+        Me.Label2.TabIndex = 191
+        Me.Label2.Text = "HASTA:"
+        '
+        'DtFin
+        '
+        Me.DtFin.CustomFormat = "yyyy-MM-dd"
+        Me.DtFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtFin.Location = New System.Drawing.Point(313, 107)
+        Me.DtFin.Name = "DtFin"
+        Me.DtFin.Size = New System.Drawing.Size(107, 20)
+        Me.DtFin.TabIndex = 190
+        '
+        'DtInicio
+        '
+        Me.DtInicio.CustomFormat = "yyyy-MM-dd"
+        Me.DtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtInicio.Location = New System.Drawing.Point(146, 107)
+        Me.DtInicio.Name = "DtInicio"
+        Me.DtInicio.Size = New System.Drawing.Size(107, 20)
+        Me.DtInicio.TabIndex = 189
+        '
         'PictureBox1
         '
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Image = Global.Bombonela.My.Resources.Resources.BUSCAR24
-        Me.PictureBox1.Location = New System.Drawing.Point(530, 103)
+        Me.PictureBox1.Location = New System.Drawing.Point(442, 104)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(24, 24)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 194
         Me.PictureBox1.TabStop = False
         '
+        'chcancelados
+        '
+        Me.chcancelados.AutoSize = True
+        Me.chcancelados.Location = New System.Drawing.Point(472, 110)
+        Me.chcancelados.Name = "chcancelados"
+        Me.chcancelados.Size = New System.Drawing.Size(210, 17)
+        Me.chcancelados.TabIndex = 197
+        Me.chcancelados.Text = "INCLUIR REGISTROS CANCELADOS"
+        Me.chcancelados.UseVisualStyleBackColor = True
+        '
         'frmcntamovbodega
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(734, 530)
+        Me.ClientSize = New System.Drawing.Size(774, 530)
+        Me.Controls.Add(Me.chcancelados)
         Me.Controls.Add(Me.menuclientes)
         Me.Controls.Add(Me.grdetalle)
         Me.Controls.Add(Me.PictureBox1)
@@ -263,4 +275,5 @@ Partial Class frmcntamovbodega
     Friend WithEvents Label2 As Label
     Friend WithEvents DtFin As DateTimePicker
     Friend WithEvents DtInicio As DateTimePicker
+    Friend WithEvents chcancelados As CheckBox
 End Class

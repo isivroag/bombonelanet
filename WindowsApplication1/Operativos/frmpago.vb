@@ -63,7 +63,7 @@ Public Class frmpago
 
             tpago.Text = tmonto.Text
             tcambio.Text = "0.00"
-            cfact.CheckState = CheckState.Checked
+            'cfact.CheckState = CheckState.Checked
             GEFECTIVO.Visible = False
 
         End If
@@ -101,35 +101,35 @@ Public Class frmpago
         Dim sucursal As String
         sucursal = My.Settings.sucursal
         Select Case (sucursal)
-            Case 1
+            Case 1, 8
                 Dim x As New frmreporte
                 x.folio = foliopago
                 x.ticket1()
                 x.ShowDialog()
-            Case 2
+            Case 2, 9
                 Dim x As New frmreporte2
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 3
                 Dim x As New frmreporte3
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 4
                 Dim x As New frmreporte4
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 5
                 Dim x As New frmreporte5
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case 6
                 Dim x As New frmreporte6
                 x.folio = foliopago
-                x.CAJA()
+                x.ticket1()
                 x.ShowDialog()
             Case Else
                 Dim x As New frmreporte
@@ -157,12 +157,14 @@ Public Class frmpago
                 pago = New c_pago
 
                 If cfact.CheckState = CheckState.Checked Then
-                    conn = New c_mysqlconn
-                    pago.Folio_fis = conn.Obtener_ID("select max(folio_fis) as max_id from pago")
-                    pago.Folio_fis += 1
+                    pago.Fclie = 1
                 Else
-                    pago.Folio_fis = 0
+                    pago.Fclie = 0
                 End If
+
+                conn = New c_mysqlconn
+                pago.Folio_fis = conn.Obtener_ID("select max(folio_fis) as max_id from pago")
+                pago.Folio_fis += 1
 
                 If Len(ccol.Text) = 0 Then
                     MsgBox("NO ES POSIBLE REGISTRAR EL PAGO" & Chr(13) & "DEBE ELEGIR EL COLABORADOR QUE REALIZA EL COBRO", vbExclamation + vbOKOnly, "PAGOS")
@@ -190,7 +192,11 @@ Public Class frmpago
 
 
                 pago.Letra_pago = LLETRAS1.Text
-
+                If cmetodo.Text = "01 Efectivo" Or cmetodo.Text = "99 Sr Pago" Then
+                    pago.Facturable = 0
+                Else
+                    pago.Facturable = 1
+                End If
 
 
                 conn = New c_mysqlconn
