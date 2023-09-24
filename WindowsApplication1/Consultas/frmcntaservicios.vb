@@ -124,14 +124,32 @@ Public Class frmcntaservicios
 
         consulta()
         ExtendedMethods.DoubleBuffered(grdatos, True)
+
+        If globalrol = 1 Then
+            For Each men As ToolStripButton In menuclientes.Items
+                If men.Name = "mncSALIR" Or men.Name = "mncpaquetes" Then
+                    men.Visible = True
+                Else
+                    men.Visible = False
+                End If
+            Next
+        End If
     End Sub
 
     Private Sub mncpaquetes_Click(sender As Object, e As EventArgs) Handles mncpaquetes.Click
-        frmcntapaquetes.Show()
-        frmcntapaquetes.BringToFront()
-        frmcntapaquetes.flag = 1
-        frmcntapaquetes.id_serv = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
-        frmcntapaquetes.consulta()
+        If globalrol = 2 Or globalrol = 3 Then
+            frmcntapaquetes.Show()
+            frmcntapaquetes.BringToFront()
+            frmcntapaquetes.flag = 1
+            frmcntapaquetes.id_serv = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
+            frmcntapaquetes.consulta()
+        Else
+            Dim form3 As New frmcntapaquetes()
+            form3.id_serv = Convert.ToInt64(grdatos.CurrentRow().Cells(0).Value)
+            form3.consulta()
+            form3.ShowDialog()
+        End If
+
     End Sub
 
     Private Sub grdatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdatos.CellContentClick

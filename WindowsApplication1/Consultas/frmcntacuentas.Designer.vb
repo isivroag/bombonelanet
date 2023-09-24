@@ -30,13 +30,20 @@ Partial Class frmcntacuentas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.grdatos = New System.Windows.Forms.DataGridView()
         Me.menuclientes = New System.Windows.Forms.ToolStrip()
-        Me.mncIMPRIMIR = New System.Windows.Forms.ToolStripButton()
+        Me.ccampo = New System.Windows.Forms.ComboBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.mncpagar = New System.Windows.Forms.ToolStripButton()
         Me.mncdetalle = New System.Windows.Forms.ToolStripButton()
         Me.mnver = New System.Windows.Forms.ToolStripButton()
         Me.mncSALIR = New System.Windows.Forms.ToolStripButton()
         Me.mncancelar = New System.Windows.Forms.ToolStripButton()
+        Me.mncIMPRIMIR = New System.Windows.Forms.ToolStripButton()
+        Me.l3 = New System.Windows.Forms.Label()
+        Me.tnombre = New System.Windows.Forms.TextBox()
+        Me.l1 = New System.Windows.Forms.Label()
+        Me.l2 = New System.Windows.Forms.Label()
+        Me.DtFin = New System.Windows.Forms.DateTimePicker()
+        Me.DtInicio = New System.Windows.Forms.DateTimePicker()
         CType(Me.grdatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.menuclientes.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,11 +54,11 @@ Partial Class frmcntacuentas
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(277, 48)
+        Me.Label1.Location = New System.Drawing.Point(306, 48)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(323, 43)
+        Me.Label1.Size = New System.Drawing.Size(304, 43)
         Me.Label1.TabIndex = 13
-        Me.Label1.Text = "CONSULTA DE CUENTAS"
+        Me.Label1.Text = "CONSULTA DE VENTAS"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.Label1.UseCompatibleTextRendering = True
         '
@@ -86,7 +93,7 @@ Partial Class frmcntacuentas
         Me.grdatos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.grdatos.EnableHeadersVisualStyles = False
         Me.grdatos.GridColor = System.Drawing.Color.White
-        Me.grdatos.Location = New System.Drawing.Point(12, 126)
+        Me.grdatos.Location = New System.Drawing.Point(12, 157)
         Me.grdatos.MultiSelect = False
         Me.grdatos.Name = "grdatos"
         Me.grdatos.ReadOnly = True
@@ -100,7 +107,7 @@ Partial Class frmcntacuentas
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.grdatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.grdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdatos.Size = New System.Drawing.Size(850, 375)
+        Me.grdatos.Size = New System.Drawing.Size(892, 410)
         Me.grdatos.TabIndex = 14
         Me.grdatos.VirtualMode = True
         '
@@ -112,24 +119,26 @@ Partial Class frmcntacuentas
         Me.menuclientes.Location = New System.Drawing.Point(0, 0)
         Me.menuclientes.Name = "menuclientes"
         Me.menuclientes.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional
-        Me.menuclientes.Size = New System.Drawing.Size(874, 48)
+        Me.menuclientes.Size = New System.Drawing.Size(916, 48)
         Me.menuclientes.TabIndex = 12
         Me.menuclientes.Text = "ToolStrip1"
         '
-        'mncIMPRIMIR
+        'ccampo
         '
-        Me.mncIMPRIMIR.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.mncIMPRIMIR.Name = "mncIMPRIMIR"
-        Me.mncIMPRIMIR.Size = New System.Drawing.Size(63, 45)
-        Me.mncIMPRIMIR.Text = "IMPRIMIR"
-        Me.mncIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.mncIMPRIMIR.Visible = False
+        Me.ccampo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ccampo.FormattingEnabled = True
+        Me.ccampo.Items.AddRange(New Object() {"FECHA", "FOLIO VENTA", "CLIENTE"})
+        Me.ccampo.Location = New System.Drawing.Point(538, 122)
+        Me.ccampo.Name = "ccampo"
+        Me.ccampo.Size = New System.Drawing.Size(109, 25)
+        Me.ccampo.TabIndex = 168
+        Me.ccampo.Text = "FECHA"
         '
         'PictureBox1
         '
         Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Image = Global.Bombonela.My.Resources.Resources.BUSCAR24
-        Me.PictureBox1.Location = New System.Drawing.Point(838, 96)
+        Me.PictureBox1.Location = New System.Drawing.Point(653, 123)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(24, 24)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -192,12 +201,91 @@ Partial Class frmcntacuentas
         Me.mncancelar.Text = "CANCELAR"
         Me.mncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'mncIMPRIMIR
+        '
+        Me.mncIMPRIMIR.BackColor = System.Drawing.Color.White
+        Me.mncIMPRIMIR.Image = Global.Bombonela.My.Resources.Resources.PRINT26
+        Me.mncIMPRIMIR.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.mncIMPRIMIR.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.mncIMPRIMIR.Name = "mncIMPRIMIR"
+        Me.mncIMPRIMIR.Size = New System.Drawing.Size(63, 45)
+        Me.mncIMPRIMIR.Text = "IMPRIMIR"
+        Me.mncIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'l3
+        '
+        Me.l3.AutoSize = True
+        Me.l3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.l3.ForeColor = System.Drawing.Color.Black
+        Me.l3.Location = New System.Drawing.Point(217, 104)
+        Me.l3.Name = "l3"
+        Me.l3.Size = New System.Drawing.Size(198, 15)
+        Me.l3.TabIndex = 216
+        Me.l3.Text = "INTRODUZCA EL DATO A BUSCAR:"
+        '
+        'tnombre
+        '
+        Me.tnombre.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tnombre.ForeColor = System.Drawing.Color.Black
+        Me.tnombre.Location = New System.Drawing.Point(230, 122)
+        Me.tnombre.Name = "tnombre"
+        Me.tnombre.Size = New System.Drawing.Size(293, 25)
+        Me.tnombre.TabIndex = 215
+        Me.tnombre.Visible = False
+        '
+        'l1
+        '
+        Me.l1.AutoSize = True
+        Me.l1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.l1.ForeColor = System.Drawing.Color.Black
+        Me.l1.Location = New System.Drawing.Point(206, 127)
+        Me.l1.Name = "l1"
+        Me.l1.Size = New System.Drawing.Size(47, 15)
+        Me.l1.TabIndex = 214
+        Me.l1.Text = "DESDE:"
+        '
+        'l2
+        '
+        Me.l2.AutoSize = True
+        Me.l2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.l2.ForeColor = System.Drawing.Color.Black
+        Me.l2.Location = New System.Drawing.Point(373, 127)
+        Me.l2.Name = "l2"
+        Me.l2.Size = New System.Drawing.Size(48, 15)
+        Me.l2.TabIndex = 213
+        Me.l2.Text = "HASTA:"
+        '
+        'DtFin
+        '
+        Me.DtFin.CustomFormat = "yyyy-MM-dd"
+        Me.DtFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtFin.Location = New System.Drawing.Point(427, 127)
+        Me.DtFin.Name = "DtFin"
+        Me.DtFin.Size = New System.Drawing.Size(107, 20)
+        Me.DtFin.TabIndex = 212
+        '
+        'DtInicio
+        '
+        Me.DtInicio.CustomFormat = "yyyy-MM-dd"
+        Me.DtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DtInicio.Location = New System.Drawing.Point(260, 127)
+        Me.DtInicio.Name = "DtInicio"
+        Me.DtInicio.Size = New System.Drawing.Size(107, 20)
+        Me.DtInicio.TabIndex = 211
+        '
         'frmcntacuentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(874, 519)
+        Me.ClientSize = New System.Drawing.Size(916, 579)
+        Me.Controls.Add(Me.l3)
+        Me.Controls.Add(Me.tnombre)
+        Me.Controls.Add(Me.l1)
+        Me.Controls.Add(Me.l2)
+        Me.Controls.Add(Me.DtFin)
+        Me.Controls.Add(Me.DtInicio)
+        Me.Controls.Add(Me.ccampo)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.grdatos)
@@ -218,10 +306,17 @@ Partial Class frmcntacuentas
     Friend WithEvents grdatos As DataGridView
     Friend WithEvents menuclientes As ToolStrip
     Friend WithEvents mncpagar As ToolStripButton
-    Friend WithEvents mncIMPRIMIR As ToolStripButton
     Friend WithEvents mncSALIR As ToolStripButton
     Friend WithEvents mncdetalle As ToolStripButton
     Friend WithEvents mnver As ToolStripButton
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents mncancelar As ToolStripButton
+    Friend WithEvents ccampo As ComboBox
+    Friend WithEvents mncIMPRIMIR As ToolStripButton
+    Friend WithEvents l3 As Label
+    Friend WithEvents tnombre As TextBox
+    Friend WithEvents l1 As Label
+    Friend WithEvents l2 As Label
+    Friend WithEvents DtFin As DateTimePicker
+    Friend WithEvents DtInicio As DateTimePicker
 End Class

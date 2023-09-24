@@ -47,4 +47,29 @@ Public Class frmlogin
             MsgBox("ACCESO DENEGADO", vbOKOnly + vbInformation, "ENTRAR")
         End If
     End Sub
+
+    Private Sub tlogin_TextChanged(sender As Object, e As EventArgs) Handles tlogin.TextChanged
+
+    End Sub
+
+    Private Sub tlogin_GotFocus(sender As Object, e As EventArgs) Handles tlogin.GotFocus
+        tlogin.SelectAll()
+
+    End Sub
+
+    Private Sub tpassword_TextChanged(sender As Object, e As EventArgs) Handles tpassword.TextChanged
+
+    End Sub
+
+    Private Sub tpassword_GotFocus(sender As Object, e As EventArgs) Handles tpassword.GotFocus
+        tpassword.SelectAll()
+    End Sub
+
+    Private Sub tpassword_Click(sender As Object, e As EventArgs) Handles tpassword.Click
+        tpassword.SelectAll()
+    End Sub
+
+    Private Sub tlogin_Click(sender As Object, e As EventArgs) Handles tlogin.Click
+        tlogin.SelectAll()
+    End Sub
 End Class

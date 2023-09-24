@@ -327,6 +327,12 @@
     <Compile Include="Consultas\frmcntatickets.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consultas\frmcntavtacan.Designer.vb">
+      <DependentUpon>frmcntavtacan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmcntavtacan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Consultas\frmcntavtadetpago.Designer.vb">
       <DependentUpon>frmcntavtadetpago.vb</DependentUpon>
     </Compile>
@@ -343,6 +349,12 @@
       <DependentUpon>frmcumple.vb</DependentUpon>
     </Compile>
     <Compile Include="Consultas\frmcumple.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmticketscan.Designer.vb">
+      <DependentUpon>frmticketscan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmticketscan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="c_mysqlconn.vb" />
@@ -916,6 +928,9 @@
     <EmbeddedResource Include="Consultas\frmcntatickets.resx">
       <DependentUpon>frmcntatickets.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmcntavtacan.resx">
+      <DependentUpon>frmcntavtacan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcntavtadetpago.resx">
       <DependentUpon>frmcntavtadetpago.vb</DependentUpon>
     </EmbeddedResource>
@@ -924,6 +939,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmcumple.resx">
       <DependentUpon>frmcumple.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmticketscan.resx">
+      <DependentUpon>frmticketscan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmcntavtadet.resx">
       <DependentUpon>frmcntavtadet.vb</DependentUpon>
@@ -1253,6 +1271,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bombonelafondo.ico" />
+    <None Include="Resources\icons8-invoicecan-32.png" />
+    <None Include="Resources\icons8-money-bag-32.png" />
     <None Include="Resources\switch.png" />
     <None Include="Resources\VER.png" />
     <None Include="Resources\WAREHOUSE.png" />

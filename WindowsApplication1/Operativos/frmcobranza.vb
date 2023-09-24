@@ -11,6 +11,7 @@ Public Class frmcobranza
     Public flag As Integer
     Public saldo As Double
     Dim folpaquete As Int64
+    Dim estado As Int32
 
     Public Sub mostrar()
         conn = New c_mysqlconn
@@ -28,7 +29,17 @@ Public Class frmcobranza
             tconcepto.Text = table.Rows(0).Item("concepto_cxc")
             tdescuento.Text = table.Rows(0).Item("descuento_cxc")
             tsubtotal.Text = table.Rows(0).Item("subtotal_cxc")
+            estado = table.Rows(0).Item("estado_cxc")
 
+        End If
+
+        lestado.Visible = True
+        If estado = 1 Then
+            lestado.Text = "VIGENTE"
+            lestado.ForeColor = Color.Green
+        Else
+            lestado.Text = "CANCELADO"
+            lestado.ForeColor = Color.Red
         End If
 
         buscarcliente()

@@ -113,6 +113,15 @@ Public Class frmcntapaquetes
         inicial(sender, e, "CONSULTA DE PAQUETES")
 
         ExtendedMethods.DoubleBuffered(grdatos, True)
+        If globalrol = 1 Then
+            For Each men As ToolStripButton In menuclientes.Items
+                If men.Name = "mncSALIR" Then
+                    men.Visible = True
+                Else
+                    men.Visible = False
+                End If
+            Next
+        End If
     End Sub
 
     Private Sub grdatos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grdatos.CellContentClick

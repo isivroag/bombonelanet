@@ -14,7 +14,9 @@ Public Class frmprincipal
         Select Case rol
             Case 1
                 For Each men As ToolStripMenuItem In MenuStrip.Items
-                    If men.Name = "mncalendario" Or men.Name = "mnrecepcion" Or men.Name = "mnsalida" Or men.Name = "mnhistorial" Or men.Name = "mntools" Then
+                    If men.Name = "mncalendario" Or men.Name = "mnrecepcion" Or men.Name = "mnsalida" Or
+                        men.Name = "mnhistorial" Or men.Name = "mntools" Or men.Name = "mnconfiguracion" Or
+                        men.Name = "mninventario" Or men.Name = "mngastos" Or men.Name = "mnbodega" Then
                         men.Visible = False
                     Else
                         men.Visible = True
@@ -32,6 +34,22 @@ Public Class frmprincipal
 
                 For Each men As ToolStripMenuItem In mncaja.DropDownItems
                     If men.Name = "smnretirocaja" Then
+                        men.Visible = False
+                    Else
+                        men.Visible = True
+                    End If
+                Next
+
+                For Each men As ToolStripMenuItem In mnpersonas.DropDownItems
+                    If men.Name = "smncolaboradores" Or men.Name = "smnpuestos" Then
+                        men.Visible = False
+                    Else
+                        men.Visible = True
+                    End If
+                Next
+
+                For Each men As ToolStripMenuItem In mnreportes.DropDownItems
+                    If men.Name = "mncventascan" Or men.Name = "mncticketscan" Then
                         men.Visible = False
                     Else
                         men.Visible = True
@@ -123,7 +141,7 @@ Public Class frmprincipal
 
 
 
-    Private Sub mnccalendario_Click(sender As Object, e As EventArgs) Handles mnccalendario.Click
+    Private Sub mnccalendario_Click(sender As Object, e As EventArgs) Handles mncalendario.Click
         frmcalendario.Show()
         frmcalendario.BringToFront()
         'frmcal.Show()
@@ -167,9 +185,15 @@ Public Class frmprincipal
 
 
     Private Sub MNCATSERV_Click(sender As Object, e As EventArgs) Handles smnservicios.Click
-        frmcntaservicios.Show()
-        frmcntaservicios.BringToFront()
-        frmcntaservicios.flag = 1
+        If rol = 2 Or rol = 3 Then
+            frmcntaservicios.Show()
+            frmcntaservicios.BringToFront()
+            frmcntaservicios.flag = 1
+        Else
+            Dim form2 As New frmcntaservicios()
+            form2.Show()
+        End If
+
     End Sub
 
     Private Sub MNCATPROD_Click(sender As Object, e As EventArgs) Handles smnproductos.Click
@@ -184,7 +208,7 @@ Public Class frmprincipal
 
 
             ' Muestra el formulario modalmemte (bloquea la interacción con otros formularios)
-            form2.ShowDialog()
+            form2.Show()
         End If
     End Sub
 
@@ -196,6 +220,7 @@ Public Class frmprincipal
 
     Private Sub mncxc_Click(sender As Object, e As EventArgs) Handles mncxc.Click
         frmcntacuentas.Show()
+        frmcntacuentas.BringToFront()
     End Sub
 
     Private Sub mncingresos_Click(sender As Object, e As EventArgs) Handles mncingresos.Click
@@ -430,6 +455,18 @@ Public Class frmprincipal
     Private Sub mncambiar_Click(sender As Object, e As EventArgs) Handles mncambiar.Click
         frmlogin.Show()
         Dispose()
+
+    End Sub
+
+    Private Sub mncventas_Click(sender As Object, e As EventArgs) Handles mncventascan.Click
+        frmcntavtacan.Show()
+        frmcntavtacan.BringToFront()
+
+    End Sub
+
+    Private Sub mncticketscan_Click(sender As Object, e As EventArgs) Handles mncticketscan.Click
+        frmticketscan.Show()
+        frmticketscan.BringToFront()
 
     End Sub
 End Class

@@ -60,9 +60,10 @@ Public Class frmcntainventario
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-        consulta()
+        If (Len(calmacen.Text) > 0) Then
+            consulta()
 
-
+        End If
 
 
 

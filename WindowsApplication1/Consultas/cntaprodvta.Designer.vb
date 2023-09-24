@@ -43,7 +43,7 @@ Partial Class cntaprodvta
         Me.ccampo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ccampo.FormattingEnabled = True
         Me.ccampo.Items.AddRange(New Object() {"ID", "CLAVE", "NOMBRE", "PRECIO", "EXISTENCIA", "MARCA", "TODOS"})
-        Me.ccampo.Location = New System.Drawing.Point(821, 90)
+        Me.ccampo.Location = New System.Drawing.Point(680, 91)
         Me.ccampo.Name = "ccampo"
         Me.ccampo.Size = New System.Drawing.Size(109, 25)
         Me.ccampo.TabIndex = 172
@@ -59,7 +59,7 @@ Partial Class cntaprodvta
         Me.bbuscar.FlatAppearance.BorderSize = 2
         Me.bbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bbuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bbuscar.Location = New System.Drawing.Point(706, 90)
+        Me.bbuscar.Location = New System.Drawing.Point(565, 91)
         Me.bbuscar.Name = "bbuscar"
         Me.bbuscar.Size = New System.Drawing.Size(109, 28)
         Me.bbuscar.TabIndex = 171
@@ -71,7 +71,7 @@ Partial Class cntaprodvta
         '
         Me.tnombre.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tnombre.ForeColor = System.Drawing.SystemColors.InactiveCaption
-        Me.tnombre.Location = New System.Drawing.Point(203, 92)
+        Me.tnombre.Location = New System.Drawing.Point(62, 93)
         Me.tnombre.Name = "tnombre"
         Me.tnombre.Size = New System.Drawing.Size(497, 25)
         Me.tnombre.TabIndex = 170
@@ -82,7 +82,7 @@ Partial Class cntaprodvta
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold)
         Me.Label1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Label1.Location = New System.Drawing.Point(363, 48)
+        Me.Label1.Location = New System.Drawing.Point(279, 49)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(293, 43)
         Me.Label1.TabIndex = 168
@@ -138,7 +138,7 @@ Partial Class cntaprodvta
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.grdatos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.grdatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdatos.Size = New System.Drawing.Size(1109, 321)
+        Me.grdatos.Size = New System.Drawing.Size(826, 321)
         Me.grdatos.TabIndex = 169
         Me.grdatos.VirtualMode = True
         '
@@ -150,7 +150,7 @@ Partial Class cntaprodvta
         Me.menuclientes.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mncSALIR})
         Me.menuclientes.Location = New System.Drawing.Point(0, 0)
         Me.menuclientes.Name = "menuclientes"
-        Me.menuclientes.Size = New System.Drawing.Size(1133, 48)
+        Me.menuclientes.Size = New System.Drawing.Size(850, 48)
         Me.menuclientes.TabIndex = 167
         Me.menuclientes.Text = "ToolStrip1"
         '
@@ -170,7 +170,7 @@ Partial Class cntaprodvta
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1133, 457)
+        Me.ClientSize = New System.Drawing.Size(850, 457)
         Me.Controls.Add(Me.ccampo)
         Me.Controls.Add(Me.bbuscar)
         Me.Controls.Add(Me.tnombre)
